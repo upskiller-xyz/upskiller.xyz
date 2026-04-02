@@ -55,7 +55,7 @@ const TeamSection: React.FC = () => {
     <Section id="team" theme="primary">
       <SectionHeader 
         content={{
-          title: "Our Team",
+          title: "Team",
           theme: 'light'
         }}
       />

@@ -25,7 +25,7 @@
 
   .btn-primary {
     background-color: #0284c7;
-    color: white;
+    color: #f4fffa;
   }
   
   .btn-primary:hover {
@@ -40,12 +40,12 @@
   
   .btn-secondary:hover {
     background-color: #0284c7;
-    color: white;
+    color: #f4fffa;
   }
 
   .btn-accent {
     background-color: #10b981;
-    color: white;
+    color: #f4fffa;
   }
   
   .btn-accent:hover {
@@ -153,14 +153,14 @@ nav {
   --color-secondary-light: #99efca;
   --color-accent: #00ff66;
   --color-text-light: #f4fffa;
-  --color-text-dark: #000000;
+  --color-text-dark: #180057;
   --color-brand-blue: #0ea5e9;
   --color-contact-bg: #00d67a;
   --color-follow-us: #4e378a;
   --color-border-light: #e5e7eb;
   --color-border-dark: #374151;
   --color-gray-400: #9ca3af;
-  --color-white: #ffffff;
+  --color-white: #f4fffa;
   --spacing: 0.25rem; /* Base spacing unit (4px) */
 }
 
@@ -301,6 +301,7 @@ section{
   padding: calc(var(--spacing) * 8);
   display: flex;
   flex-direction: column;
+  gap: 1.5rem;
 }
 
 
@@ -554,7 +555,7 @@ section{
   font-size: 1.875rem;
   line-height: 2.25rem;
   font-weight: 700;
-  color: #000000;
+  color: #180057;
 }
 
 .contact-methods-grid {
@@ -592,7 +593,7 @@ section{
 }
 
 .contact-button-text {
-  color: #000000;
+  color: #180057;
   font-weight: 500;
   display: inline;
 }
@@ -845,7 +846,7 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .primary-link {
-  color: var(--color-brand-blue);
+  color: inherit;
   text-decoration: underline;
 }
 
@@ -856,6 +857,11 @@ h1, h2, h3, h4, h5, h6 {
   padding: 0;
   padding-top: calc(var(--spacing) * 16);
   min-height: auto;
+}
+
+#products.section-container,
+#resources.section-container {
+  align-items: flex-start;
 }
 
 .support-container {
@@ -1108,7 +1114,7 @@ h1, h2, h3, h4, h5, h6 {
 @media (min-width: 1024px) {
   .section-grid-2col {
     grid-template-columns: repeat(2, 1fr);
-    gap: 3rem;
+    gap: 2rem;
   }
 }
 

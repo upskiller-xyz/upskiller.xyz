@@ -3,6 +3,7 @@
 This file tracks the development history and decisions made with Claude for this repository.
 
 ## 🏗️ Project Overview
+
 - **Repository**: 00_Websites
 - **Purpose**: Multi-website platform for company and tools
 - **Tech Stack**: React, TypeScript, Tailwind CSS, Vite
@@ -15,6 +16,7 @@ This file tracks the development history and decisions made with Claude for this
 ### **Session 1 - Initial Setup & Design (July 14, 2025)**
 
 #### **🚀 Major Accomplishments**
+
 1. **Fixed Blank Page Issue**
    - Problem: Empty `my-sites/package.json` causing startup failures
    - Solution: Added complete package.json with React/TypeScript/Vite dependencies
@@ -48,12 +50,14 @@ This file tracks the development history and decisions made with Claude for this
 #### **🛠️ Technical Decisions**
 
 **Framework Choices:**
+
 - **React 18** for component architecture
 - **TypeScript** for type safety
 - **Vite** for fast development and building
 - **Tailwind CSS v4** for utility-first styling
 
 **Project Structure:**
+
 ```
 00_Websites/
 ├── shared/                 # Reusable components across projects
@@ -63,12 +67,14 @@ This file tracks the development history and decisions made with Claude for this
 ```
 
 **Design System:**
+
 - Primary colors: Blue (#0ea5e9)
 - Accent color: Green (#10b981)
 - Typography: Inter (body), Poppins (headings)
 - Consistent spacing using Tailwind utilities
 
 #### **🔧 Commands for New Team Members**
+
 ```bash
 # Setup
 git clone https://github.com/upskiller-xyz/00_Websites.git
@@ -85,12 +91,14 @@ npm run lint && npm run build
 ```
 
 #### **📋 Current Status**
+
 - ✅ Upskiller website: Complete single-page design with scrolling sections
 - ✅ Shared components: Basic structure established
 - ✅ Development workflow: Documented and tested
 - ⏳ Tool websites: Planned but not yet implemented
 
 #### **🎯 Next Steps / Future Tasks**
+
 1. Create `tool-website-01/` directory and basic structure
 2. Add more shared components (Layout, Header, Footer)
 3. Implement form validation for contact forms
@@ -99,6 +107,7 @@ npm run lint && npm run build
 6. Add testing framework (Vitest/Jest)
 
 #### **🚨 Important Notes for Future Sessions**
+
 - Vite dev server runs on port 5175 (configured in vite.config.ts)
 - All imports from shared components use `../../shared/` path structure
 - Build artifacts are gitignored - never commit dist/ or compiled .js files
@@ -111,13 +120,58 @@ npm run lint && npm run build
 When resuming work on this repository:
 
 1. **Current State**: Single-page Upskiller website is complete and running
-2. **Key Files**: 
+2. **Key Files**:
    - Main app: `upskiller/src/App.tsx`
    - Shared components: `shared/components/SharedButton.tsx`
    - Styles: `upskiller/src/styles/globals.css` (includes Tailwind)
 3. **Architecture**: Ready for multi-website expansion with shared components
 4. **Documentation**: README.md has complete setup guide for new developers
 
+## Commit Message Conventions
+
+Follow the Conventional Commits specification (https://conventionalcommits.org).
+
+Format: <type>(<optional scope>): <description>
+
+### Types
+
+- feat: new functionality or visual changes the user can see
+- fix: bug fixes, including visual/layout bugs
+- perf: performance improvements
+- refactor: restructuring without behavior or visual change
+- style: code formatting only (whitespace, semicolons) — NOT visual design
+- docs: documentation only
+- test: adding or correcting tests
+- build: build system or dependencies
+- ci: CI/CD configuration
+- chore: maintenance tasks that don't fit above
+
+### Scopes for visual/design work
+
+- ui: general visual changes (colors, typography, spacing, components)
+- layout: structural changes (grid, flexbox, page structure, responsiveness)
+- design: broader design system updates (theme, design tokens, brand)
+- a11y: accessibility improvements (contrast, focus states, screen readers)
+
+Examples:
+
+- feat(ui): add hover animation to product cards
+- feat(layout): switch footer to three-column grid
+- feat(design): introduce dark mode color palette
+- fix(ui): correct button alignment on mobile
+- fix(layout): prevent sidebar overlap at tablet breakpoints
+- fix(a11y): increase contrast ratio on placeholder text
+- refactor(ui): migrate inline styles to CSS modules
+
+### Rules
+
+- Use imperative mood ("add" not "added")
+- Do not capitalize the first word after the colon
+- No period at the end of the description
+- Keep the first line under 72 characters
+- Add a body after a blank line for complex changes
+- Mark breaking changes with ! after the type or a BREAKING CHANGE footer
+
 ---
 
-*This file is automatically updated by Claude to maintain project context across sessions.*
+_This file is automatically updated by Claude to maintain project context across sessions._

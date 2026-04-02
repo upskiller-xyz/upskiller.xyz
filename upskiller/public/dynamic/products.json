@@ -7,12 +7,11 @@
         "alt": "Daylight analysis animation"
       },
       "content": {
-        "name": "DAYLIGHT FACTOR",
-        "subtitle": "Fast daylight analysis tool",
-        "problem": "Daylight simulation is slow and incurs costs when done late in the design process.",
-        "solution": "Fast daylight analysis tool that helps architects and engineers optimize natural lighting in building designs.",
+        "name": "LUX LIVE",
+        "subtitle": "Revit plugin for near-real-time daylight analysis",
+        "description": "Fast daylight analysis tool that helps architects and engineers optimize natural lighting early in the design process, avoiding costly late-stage simulations.",
         "features": [
-          "Real-time calculations",
+          "Near-real-time calculations",
           "3D visualization", 
           "Building code compliance",
           "Export capabilities"
@@ -35,8 +34,7 @@
       "content": {
         "name": "LCA ASSISTANT",
         "subtitle": "Carbon footprint analysis tool",
-        "problem": "Carbon footprint analysis is complex and requires specific knowledge. It will become mandatory in the future, but the accessibility barrier is high.",
-        "solution": "Accessible carbon footprint analysis tool that helps assess building performance.",
+        "description": "Accessible carbon footprint analysis tool that simplifies building performance assessment, lowering the knowledge barrier ahead of upcoming mandatory regulations.",
         "features": [
           "CO2 tracking",
           "Material analysis", 

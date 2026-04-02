@@ -31,8 +31,8 @@ const ProductsSection: React.FC = () => {
     <Section id="products" theme="secondary">
       <SectionHeader 
         content={{
-          title: "We're working on",
-          subtitle: "These are some of the tools developed as a solution to the problems we're studying.",
+          title: "Products",
+          subtitle: "Some of the tools developed as a solution to the problems we are studying.",
           theme: 'dark'
         }}
       />

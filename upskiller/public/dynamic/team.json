@@ -17,7 +17,7 @@
       "graduatedAs": "Architect with master in environmental building design.",
       "teachingExperience": "Lund Technical University",
       "workExperience": "BAU, White Arkitekter.",
-      "favLLM": "GPT.",
+      "favLLM": "GPT and Claude",
       "fact": "He is not Libny's brother.",
       "socials": {
         "Email": "mailto:alejandro.pacheco@upskiller.xyz",
@@ -30,7 +30,7 @@
       "type": "member", 
       "bio": "Practicing architect since 2009 with project, computational design, and teaching experience spanning Sweden, the UK and China.",
       "graduatedAs": "Architect with master in Advanced Computation for Architecture & Design.",
-      "teachingExperience": "Universidad de los Andes, Tsinghua University, IAAC.",
+      "teachingExperience": "Universidad de los Andes, Tsinghua University, Institute of Advanced Architecture of Catalonia.",
       "workExperience": "Plasma Studio, Crossboundaries, White Arkitekter.",
       "favLLM": "Claude.",
       "fact": "He is not Alejandro's brother.",
@@ -43,16 +43,15 @@
       "id": "stasja",
       "name": "Stasja",
       "type": "member",
-      "bio": "Our tech lead, and machine learning engineer at H&M, lecturer at IAAC Barcelona.",
-      "graduatedAs": "Doesn't matter, studies continuously",
-      "teachingExperience": "Iaac, Umeå University, PoliMi.",
-      "workExperience": "H&M, AECinCode, ELSE-Corp",
+      "bio": "Our tech lead, and machine learning engineer, and lecturer at IAAC, Barcelona.",
+      "graduatedAs": "Doesn't matter. Studies continuously",
+      "teachingExperience": "Institute of Advanced Architecture of Catalonia, Umeå University, PoliMi.",
+      "workExperience": "H&M, [AECinCode](http://aecincode.substack.com/), ELSE-Corp",
       "favLLM": "Claude / Gemini",
       "fact": "Studies medieval Swedish, energy sector and food science",
       "socials": {
         "Email": "mailto:stasja.fedorova@upskiller.xyz",
-        "LinkedIn": "https://www.linkedin.com/in/stasja-fedorova/",
-        "AECinCode": "http://aecincode.substack.com/"
+        "LinkedIn": "https://www.linkedin.com/in/stasja-fedorova/"
       }
     },
     {
@@ -60,10 +59,10 @@
       "name": "Christoph", 
       "type": "member",
       "bio": "BIM specialist with 10+ years of experience working in Austria and Germany.",
-      "graduatedAs": "Civil Engineer with master in Advanced Computation for Architecture & Design.",
-      "teachingExperience": "Munich University of Applied Sciences.",
+      "graduatedAs": "Master's degrees in Civil Engineering and Advanced Computation for Architecture & Design.",
+      "teachingExperience": "Munich University of Applied Sciences and Institute of Advanced Architecture of Catalonia.",
       "workExperience": "Jaeger Ausbau Gruppe, PORR.",
-      "favLLM": "Claude",
+      "favLLM": "All of them, ideally working together",
       "fact": "Experienced drone pilot.",
       "socials": {
         "Email": "mailto:christoph.berkmiller@upskiller.xyz",
