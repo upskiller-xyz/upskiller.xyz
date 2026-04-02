@@ -11,7 +11,7 @@ interface ProductGridProps {
 }
 
 const ProductGrid: React.FC<ProductGridProps> = ({ products }) => (
-  <ComponentGrid gridType={GridType.SECTION} columns="2col" className="max-w-5xl mx-auto">
+  <ComponentGrid gridType={GridType.SECTION} columns="2col">
     {products.map((product) => {
       const isUpcoming = product.config.status === ProductStatus.UPCOMING;
       const isClickable = product.config.linkUrl && !isUpcoming;
