@@ -858,6 +858,11 @@ h1, h2, h3, h4, h5, h6 {
   min-height: auto;
 }
 
+#products.section-container,
+#resources.section-container {
+  align-items: flex-start;
+}
+
 .support-container {
   max-width: 80rem;
   margin: 0 auto;

@@ -3,6 +3,7 @@ import React, { useState, useEffect } from 'react';
 import { InfoCard } from '../sections-components/info-card/InfoCard';
 import { NewsCard } from '../sections-components/news-card/NewsCard'
 import Section from '../shared-components/Section';
+import SectionHeader from '../shared-components/SectionHeader';
 import ContactUs from '../sections-components/ContactUs';
 import FollowUs from '../sections-components/FollowUs';
 import { Product } from '@shared/types';
@@ -38,11 +39,12 @@ const ResourcesSection: React.FC = () => {
   return (
     <Section id="resources" theme="primary">
       <div className="section-content">
-        <div className="text-center space-y-4 mb-16">
-          <h2 className="section-title resources-title automate-font">
-            Resources
-          </h2>
-        </div>
+        <SectionHeader
+          content={{
+            title: "Resources",
+            theme: 'light'
+          }}
+        />
 
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 mb-16">
         <NewsCard className="transition-all duration-300" />
