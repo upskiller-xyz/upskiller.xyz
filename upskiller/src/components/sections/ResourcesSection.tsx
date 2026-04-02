@@ -39,7 +39,7 @@ const ResourcesSection: React.FC = () => {
     <Section id="resources" theme="primary">
       <div className="section-content">
         <div className="text-center space-y-4 mb-16">
-          <h2 className="text-4xl lg:text-5xl font-bold resources-title">
+          <h2 className="section-title resources-title automate-font">
             Resources
           </h2>
         </div>
