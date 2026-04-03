@@ -22,7 +22,7 @@ const SectionHeader: React.FC<SectionHeaderProps> = ({
       {content.title}
     </SectionTitle>
     {content.subtitle && (
-      <SectionSubtitle>
+      <SectionSubtitle theme={content.theme}>
         {content.subtitle}
       </SectionSubtitle>
     )}

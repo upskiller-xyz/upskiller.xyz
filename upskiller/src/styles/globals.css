@@ -1100,9 +1100,16 @@ h1, h2, h3, h4, h5, h6 {
 
 .section-subtitle {
   font-size: 1.25rem;
-  color: var(--color-text-dark);
   max-width: 48rem;
   margin: 0 auto;
+}
+
+.section-subtitle-light {
+  color: var(--color-text-light);
+}
+
+.section-subtitle-dark {
+  color: var(--color-text-dark);
 }
 
 /* Grid layouts commonly used in sections */
@@ -1233,5 +1240,204 @@ h1, h2, h3, h4, h5, h6 {
 
 .privacy-footer-bg {
   background-color: var(--color-primary);
+}
+
+/* Research Card Styles */
+.research-card {
+  cursor: pointer;
+  transition: transform 0.2s ease, opacity 0.2s ease;
+}
+
+.research-card:hover {
+  transform: translateY(-4px);
+}
+
+.research-card-image {
+  width: 100%;
+  aspect-ratio: 3 / 2;
+  overflow: hidden;
+  border-radius: 0.5rem;
+  background-color: var(--color-secondary);
+}
+
+.research-card-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.research-card-body {
+  padding: 0.75rem 0;
+}
+
+.research-card-title {
+  font-size: 1.125rem;
+  font-weight: 500;
+  line-height: 1.4;
+  margin: 0 0 0.5rem 0;
+  color: var(--color-text-light);
+}
+
+.research-card-meta {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  font-size: 0.8125rem;
+}
+
+.research-card-category {
+  color: var(--color-gray-400);
+  font-weight: 500;
+}
+
+.research-card-date {
+  color: var(--color-gray-400);
+}
+
+/* Research Grid */
+.research-grid-3col {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 2rem;
+}
+
+@media (min-width: 768px) {
+  .research-grid-3col {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (min-width: 1024px) {
+  .research-grid-3col {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+/* Research Section - Homepage "View all" button */
+.research-view-all {
+  display: flex;
+  justify-content: center;
+  margin-top: 3rem;
+}
+
+.research-view-all-button {
+  color: var(--color-text-light);
+  font-weight: 500;
+  font-size: 1rem;
+  cursor: pointer;
+  padding: 0.75rem 2rem;
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  background: transparent;
+  transition: background-color 0.2s ease, border-color 0.2s ease;
+}
+
+.research-view-all-button:hover {
+  background-color: rgba(255, 255, 255, 0.1);
+  border-color: rgba(255, 255, 255, 0.6);
+}
+
+/* Research Page Styles */
+.research-page {
+  background-color: var(--color-primary);
+  min-height: 100vh;
+}
+
+.research-page-content {
+  max-width: 72rem;
+  margin: 0 auto;
+  padding: 2rem 1.5rem 4rem;
+}
+
+.research-page-title {
+  font-size: 3rem;
+  font-weight: 700;
+  color: var(--color-text-light);
+  margin: 2rem 0 1.5rem;
+}
+
+.research-page-loading {
+  color: var(--color-gray-400);
+  text-align: center;
+  padding: 4rem 0;
+}
+
+/* Research Toolbar */
+.research-toolbar {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  margin-bottom: 2.5rem;
+  padding-bottom: 1rem;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+@media (min-width: 768px) {
+  .research-toolbar {
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+  }
+}
+
+.research-categories {
+  display: flex;
+  gap: 0.25rem;
+  flex-wrap: wrap;
+}
+
+.research-category-tab {
+  padding: 0.375rem 0.75rem;
+  font-size: 0.875rem;
+  color: var(--color-gray-400);
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  transition: color 0.2s ease;
+  font-weight: 400;
+}
+
+.research-category-tab:hover {
+  color: var(--color-text-light);
+}
+
+.research-category-active {
+  color: var(--color-text-light);
+  font-weight: 500;
+}
+
+.research-toolbar-actions {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+}
+
+.research-sort-button {
+  display: flex;
+  align-items: center;
+  gap: 0.375rem;
+  padding: 0.375rem 0.75rem;
+  font-size: 0.875rem;
+  color: var(--color-gray-400);
+  background: transparent;
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  cursor: pointer;
+  transition: color 0.2s ease, border-color 0.2s ease;
+}
+
+.research-sort-button:hover {
+  color: var(--color-text-light);
+  border-color: rgba(255, 255, 255, 0.3);
+}
+
+.research-empty {
+  color: var(--color-gray-400);
+  text-align: center;
+  padding: 4rem 0;
+  font-size: 1.125rem;
+}
+
+/* Research section alignment */
+#research.section-container {
+  align-items: flex-start;
 }
 

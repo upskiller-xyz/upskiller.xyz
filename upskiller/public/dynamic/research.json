@@ -1,0 +1,53 @@
+{
+  "categories": ["All", "Publication", "Conclusion", "Milestone", "Release"],
+  "articles": [
+    {
+      "id": "model-spec-approach",
+      "title": "Inside our approach to the Model Spec",
+      "category": "Publication",
+      "date": "2026-03-25",
+      "image": "/images/research/placeholder-1.svg",
+      "slug": "model-spec-approach"
+    },
+    {
+      "id": "monitoring-coding-agents",
+      "title": "How we monitor internal coding agents for misalignment",
+      "category": "Publication",
+      "date": "2026-03-19",
+      "image": "/images/research/placeholder-2.svg",
+      "slug": "monitoring-coding-agents"
+    },
+    {
+      "id": "instruction-hierarchy",
+      "title": "Improving instruction hierarchy in frontier LLMs",
+      "category": "Publication",
+      "date": "2026-03-10",
+      "image": "/images/research/placeholder-3.svg",
+      "slug": "instruction-hierarchy"
+    },
+    {
+      "id": "environmental-data-pipeline",
+      "title": "Building scalable environmental data pipelines",
+      "category": "Milestone",
+      "date": "2026-02-28",
+      "image": "/images/research/placeholder-4.svg",
+      "slug": "environmental-data-pipeline"
+    },
+    {
+      "id": "carbon-tracking-v2",
+      "title": "Carbon tracking v2: what we learned and what's next",
+      "category": "Release",
+      "date": "2026-02-15",
+      "image": "/images/research/placeholder-5.svg",
+      "slug": "carbon-tracking-v2"
+    },
+    {
+      "id": "open-source-benchmarks",
+      "title": "Open-source benchmarks for sustainability metrics",
+      "category": "Conclusion",
+      "date": "2026-01-30",
+      "image": "/images/research/placeholder-6.svg",
+      "slug": "open-source-benchmarks"
+    }
+  ]
+}

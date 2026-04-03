@@ -18,7 +18,8 @@ export enum SectionId {
   HOME = 'home',
   TEAM = 'team',
   PRODUCTS = 'products',
-  RESOURCES = 'resources'
+  RESOURCES = 'resources',
+  RESEARCH = 'research'
 }
 
 export enum AnimationTiming {

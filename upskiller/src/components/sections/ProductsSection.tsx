@@ -32,7 +32,7 @@ const ProductsSection: React.FC = () => {
       <SectionHeader 
         content={{
           title: "Products",
-          subtitle: "Some of the tools developed as a solution to the problems we are studying.",
+          subtitle: "Tools built to solve real problems in AEC. No gimmicks.",
           theme: 'dark'
         }}
       />

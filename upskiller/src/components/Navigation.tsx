@@ -18,7 +18,8 @@ const Navigation: React.FC = () => {
         [SectionId.HOME, 'home'],
         [SectionId.TEAM, 'team'],
         [SectionId.PRODUCTS, 'products'],
-        [SectionId.RESOURCES, 'resources']
+        [SectionId.RESOURCES, 'resources'],
+        [SectionId.RESEARCH, 'research']
       ]);
       
       const scrollPosition = window.scrollY + 100;
