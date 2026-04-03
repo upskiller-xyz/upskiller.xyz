@@ -2,8 +2,6 @@
 @import "tailwindcss";
 @import "../../../shared/fonts/automate.css";
 
-@theme {
-}
 
 @layer components {
   .btn-base {
@@ -88,13 +86,6 @@
     font-size: 1.125rem;
   }
 
-  .btn-disabled {
-    cursor: default;
-  }
-
-  .btn-enabled {
-    cursor: pointer;
-  }
 }
 
 /* Navigation Styles */
@@ -148,12 +139,8 @@ nav {
   --color-accent: #00ff66;
   --color-text-light: #f4fffa;
   --color-text-dark: #180057;
-  --color-contact-bg: #00d67a;
   --color-follow-us: #4e378a;
-  --color-border-light: #e5e7eb;
-  --color-border-dark: #374151;
   --color-gray-400: #9ca3af;
-  --color-white: #f4fffa;
   --spacing: 0.25rem; /* Base spacing unit (4px) */
 }
 
@@ -1039,16 +1026,6 @@ h1, h2, h3, h4, h5, h6 {
   transition: all 0.7s ease-out;
 }
 
-.hero-element-visible {
-  opacity: 1;
-  transform: translateX(0);
-}
-
-.hero-element-hidden {
-  opacity: 0;
-  transform: translateX(-3rem);
-}
-
 /* Shared Section Styles - Reusable across components */
 .section-primary {
   background-color: var(--color-primary);
@@ -1154,12 +1131,6 @@ h1, h2, h3, h4, h5, h6 {
   text-decoration: none;
 }
 
-/* Hide Articles panel on mobile */
-@media (max-width: 767px) {
-  .resource-articles {
-    display: none !important;
-  }
-}
 
 /* Privacy Page Styles */
 .privacy-page-bg {
