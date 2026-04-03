@@ -200,8 +200,8 @@ section{
 }
 
 .info-card-subtitle {
-  font-size: 1.125rem;
-  line-height: 1.75rem;
+  font-size: 0.875rem;
+  line-height: 1.25rem;
   font-weight: 500;
   color: var(--color-text-dark);
   margin: 0;
@@ -1311,6 +1311,16 @@ h1, h2, h3, h4, h5, h6 {
   .research-grid-3col {
     grid-template-columns: repeat(3, 1fr);
   }
+
+  .research-grid-3col > :first-child {
+    grid-column: span 2;
+    grid-row: span 2;
+  }
+
+  .research-grid-3col > :first-child .info-card-title {
+    font-size: 2.25rem;
+    line-height: 2.5rem;
+  }
 }
 
 /* Research Section - Homepage "View all" button */
@@ -1352,7 +1362,7 @@ h1, h2, h3, h4, h5, h6 {
   font-size: 3rem;
   font-weight: 700;
   color: var(--color-text-light);
-  margin: 2rem 0 1.5rem;
+  margin: 6rem 0 1.5rem;
 }
 
 .research-page-loading {

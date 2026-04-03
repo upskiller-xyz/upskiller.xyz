@@ -1,10 +1,19 @@
 import React, { useState, useEffect, useMemo } from 'react';
-import PageHeader from '../shared-components/PageHeader';
+import Navigation from '../Navigation';
 import PageFooter from '../shared-components/PageFooter';
-import { ResearchCard } from '../sections-components/research-card';
+import { InfoCard } from '../sections-components/info-card/InfoCard';
 import { ResearchArticle, ResearchData } from '../../../../shared/types/research.types';
 import { fetchJsonWithFallback } from '../../utils/fetchWithFallback';
 import AssetPathManager from '../../utils/AssetPathManager';
+
+const formatDate = (dateString: string) => {
+  const date = new Date(dateString);
+  return date.toLocaleDateString('en-US', {
+    year: 'numeric',
+    month: 'short',
+    day: 'numeric'
+  });
+};
 
 type SortOption = 'newest' | 'oldest';
 
@@ -56,7 +65,7 @@ const ResearchPage: React.FC = () => {
   if (!data) {
     return (
       <div className="research-page">
-        <PageHeader />
+        <Navigation />
         <main className="research-page-content">
           <div className="research-page-loading">Loading...</div>
         </main>
@@ -67,7 +76,7 @@ const ResearchPage: React.FC = () => {
 
   return (
     <div className="research-page">
-      <PageHeader />
+      <Navigation />
       <main className="research-page-content">
         <h1 className="research-page-title">Research</h1>
 
@@ -95,10 +104,17 @@ const ResearchPage: React.FC = () => {
 
         <div className="research-grid-3col">
           {filteredArticles.map((article) => (
-            <ResearchCard
+            <InfoCard
               key={article.id}
-              article={article}
-              onClick={handleArticleClick}
+              content={{
+                title: article.title,
+                subtitle: `${article.category} · ${formatDate(article.date)}`,
+                icon: <img src={article.image} alt={article.title} loading="lazy" />,
+              }}
+              config={{
+                className: 'transition-all duration-300 cursor-pointer',
+                onClick: () => handleArticleClick(article),
+              }}
             />
           ))}
         </div>

@@ -1,19 +1,19 @@
 import React from 'react';
-import { SharedImage } from '@shared/components';
-import { SectionId } from '../../constants/enums';
+import { Link } from 'react-router-dom';
 import AssetPathManager from '../../utils/AssetPathManager';
 
 interface NavigationLogoProps {
   scrollToSection: (sectionId: string) => void;
 }
 
-export const NavigationLogo: React.FC<NavigationLogoProps> = ({ scrollToSection }) => {
+export const NavigationLogo: React.FC<NavigationLogoProps> = () => {
   return (
-    <SharedImage
-      src={AssetPathManager.getNavigationLogo()}
-      alt="Upskiller"
-      className="h-8 w-auto"
-      onClick={() => scrollToSection(SectionId.HOME)}
-    />
+    <Link to="/">
+      <img
+        src={AssetPathManager.getNavigationLogo()}
+        alt="Upskiller"
+        className="h-8 w-auto"
+      />
+    </Link>
   );
 };
