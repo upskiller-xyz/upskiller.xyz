@@ -68,8 +68,8 @@ This file tracks the development history and decisions made with Claude for this
 
 **Design System:**
 
-- Primary colors: Blue (#0ea5e9)
-- Accent color: Green (#10b981)
+- Primary colors: Purple (#180057)
+- Secondary color: Green (#00d67a)
 - Typography: Inter (body), Poppins (headings)
 - Consistent spacing using Tailwind utilities
 
