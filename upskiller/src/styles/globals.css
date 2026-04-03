@@ -86,6 +86,13 @@
     font-size: 1.125rem;
   }
 
+  .btn-disabled {
+    cursor: default;
+  }
+
+  .btn-enabled {
+    cursor: pointer;
+  }
 }
 
 /* Navigation Styles */
@@ -614,7 +621,7 @@ section{
 }
 
 .footer-link:hover {
-  color: var(--color-white);
+  color: var(--color-text-light);
 }
 
 /* Partner Components */
@@ -1024,6 +1031,16 @@ h1, h2, h3, h4, h5, h6 {
   line-height: 1.75;
   color: var(--color-text-light);
   transition: all 0.7s ease-out;
+}
+
+.hero-element-visible {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+.hero-element-hidden {
+  opacity: 0;
+  transform: translateX(-3rem);
 }
 
 /* Shared Section Styles - Reusable across components */
