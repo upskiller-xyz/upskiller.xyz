@@ -1306,9 +1306,15 @@ h1, h2, h3, h4, h5, h6 {
 
 /* Research Section - Homepage "View all" button */
 .research-view-all {
-  display: flex;
-  justify-content: center;
   margin-top: 3rem;
+  width: calc(50% - 1rem);
+  margin-inline: auto;
+}
+
+@media (max-width: 1023px) {
+  .research-view-all {
+    width: 100%;
+  }
 }
 
 .research-view-all-button {
