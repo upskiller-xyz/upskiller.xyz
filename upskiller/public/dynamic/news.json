@@ -26,5 +26,33 @@
     "description": "upskiller has been awarded funding from Belysningsstiftelsen to develop a machine learning daylight analysis tool that integrates with BIM software for real-time predictions.",
     "date": "2025-03-20",
     "url": "https://www.mynewsdesk.com/se/belysningsstiftelsen/pressreleases/nytt-ai-projekt-saetter-dagsljuset-i-fokus-3376592"
+  },
+  {
+    "id": 5,
+    "title": "Dummy: upskiller Joins Nordic BIM Alliance",
+    "description": "Placeholder news entry used for testing scroll behaviour in the News card. upskiller joins a cross-border initiative to align BIM workflows across Nordic countries.",
+    "date": "2025-02-10",
+    "url": "#"
+  },
+  {
+    "id": 6,
+    "title": "Dummy: Preview of upcoming LUX LIVE for IFC beta",
+    "description": "Placeholder news entry used for testing scroll behaviour in the News card. A closed beta of LUX LIVE for IFC opens to a small group of architecture studios.",
+    "date": "2025-01-22",
+    "url": "#"
+  },
+  {
+    "id": 7,
+    "title": "Dummy: Talk at KTH Digital Futures Seminar",
+    "description": "Placeholder news entry used for testing scroll behaviour in the News card. The team shares findings on ML-driven daylight prediction at KTH Digital Futures.",
+    "date": "2024-12-05",
+    "url": "#"
+  },
+  {
+    "id": 8,
+    "title": "Dummy: New research partnership announced",
+    "description": "Placeholder news entry used for testing scroll behaviour in the News card. A multi-year research partnership with a leading Swedish university begins.",
+    "date": "2024-11-18",
+    "url": "#"
   }
 ]

@@ -46,7 +46,7 @@ const ResourcesSection: React.FC = () => {
           }}
         />
 
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 mb-16">
+        <div className="grid grid-cols-1 lg:grid-cols-2 lg:auto-rows-fr gap-8 mb-16">
         <NewsCard className="lg:row-span-2 transition-all duration-300" />
         {resources.map((resource) => {
           const displayConfig = {

@@ -37,7 +37,7 @@ export const NewsCard: React.FC<NewsCardProps> = ({
           AssetPathManager.getDynamicData('news.json'),
           '/dynamic/news.json'
         );
-        setNewsItems(data.slice(0, 4));
+        setNewsItems(data);
         setLoading(false);
       } catch (err) {
         const errorMessage = err instanceof Error ? err.message : 'An error occurred';

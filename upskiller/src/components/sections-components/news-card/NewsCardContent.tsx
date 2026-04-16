@@ -24,14 +24,18 @@ export const NewsCardContent: React.FC<NewsCardContentProps> = ({
   formatDate
 }) => (
   <div className="news-card-content">
-    <NewsCardHeader
-      title={title}
-      description={description}
-    />
-    
-    <NewsItemList
-      items={newsItems}
-      formatDate={formatDate}
-    />
+    <div className="news-card-header-wrapper">
+      <NewsCardHeader
+        title={title}
+        description={description}
+      />
+    </div>
+
+    <div className="news-card-scroll">
+      <NewsItemList
+        items={newsItems}
+        formatDate={formatDate}
+      />
+    </div>
   </div>
 );
