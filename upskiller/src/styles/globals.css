@@ -839,7 +839,7 @@ h1, h2, h3, h4, h5, h6 {
 
 /* Support Section Styles */
 .section-support {
-  background-color: var(--color-secondary-light);
+  background-color: var(--color-secondary);
   padding-top: 4rem;
   padding: 0;
   padding-top: calc(var(--spacing) * 16);
@@ -878,11 +878,6 @@ h1, h2, h3, h4, h5, h6 {
 .support-partners {
   background-color: var(--color-secondary);
   padding: 0.6rem;
-  transition: transform 0.3s;
-}
-
-.support-partners:hover {
-  transform: translate(30px, -30px);
 }
 
 .support-partners-grid {
