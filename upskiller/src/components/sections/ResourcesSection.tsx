@@ -47,20 +47,20 @@ const ResourcesSection: React.FC = () => {
         />
 
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 mb-16">
-        <NewsCard className="transition-all duration-300" />
+        <NewsCard className="lg:row-span-2 transition-all duration-300" />
         {resources.map((resource) => {
           const displayConfig = {
             descriptionLabel: "",
             itemsLabel: "What you'll find:",
             // icon: getResourceIcon(resource.content.name)
           };
-          
+
           const buttonConfig = {
             text: resource.config.buttonText,
             show: true,
             onClick: () => window.open(resource.config.linkUrl, '_blank')
           };
-          
+
           const cardConfig = {
             className: `transition-all duration-300 resource-${resource.config.id}`,
             style: resource.config.id === 'articles' ? { '--resource-id': 'articles' } : {}
