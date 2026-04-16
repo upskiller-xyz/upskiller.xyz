@@ -63,7 +63,7 @@ const ResourcesSection: React.FC = () => {
 
           const cardConfig = {
             className: `transition-all duration-300 resource-${resource.config.id}`,
-            style: resource.config.id === 'articles' ? { '--resource-id': 'articles' } : {}
+            style: (resource.config.id === 'articles' ? { '--resource-id': 'articles' } : {}) as React.CSSProperties
           };
 
           return (
