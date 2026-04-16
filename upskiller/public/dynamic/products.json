@@ -7,7 +7,7 @@
         "alt": "Daylight analysis animation"
       },
       "content": {
-        "name": "LUX LIVE",
+        "name": "LUX LIVE for Revit®",
         "subtitle": "Revit plugin for near-real-time daylight analysis",
         "description": "Fast daylight analysis tool that helps architects and engineers optimize natural lighting early in the design process, avoiding costly late-stage simulations.",
         "features": [
@@ -28,22 +28,22 @@
     {
       "icon": {
         "type": "image",
-        "src": "/images/coming_soon_2.svg",
+        "src": "/images/daylight.gif",
         "alt": "Coming soon icon"
       },
       "content": {
-        "name": "LCA ASSISTANT",
-        "subtitle": "Carbon footprint analysis tool",
-        "description": "Accessible carbon footprint analysis tool that simplifies building performance assessment, lowering the knowledge barrier ahead of upcoming mandatory regulations.",
+        "name": "LUX LIVE for IFC",
+        "subtitle": "Web platform for daylight analysis of IFC models",
+        "description": "Ideal for municipalities and building owners to ensure their projects meet daylight regulations without needing desktop software.",
         "features": [
-          "CO2 tracking",
-          "Material analysis", 
-          "Lifecycle assessment",
-          "Sustainability reports"
+          "Near-real-time calculations",
+          "3D visualization", 
+          "Building code compliance",
+          "Web-based access. No 3D or BIM software required"
         ]
       },
       "config": {
-        "id": "lca-assistant",
+        "id": "daylight-ifc",
         "status": "upcoming",
         "color": "accent",
         "buttonText": "Coming Soon"
