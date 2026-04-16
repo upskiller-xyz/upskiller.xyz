@@ -1,26 +1,14 @@
 # TODO
 
-## Add a "Brand Kit" section to Resources
-
-Add a third card to the Resources section for Brand Kit content.
-
----
-
-## Add scrolling to the News card
-
-Enable scrolling within the News card so more news items can be displayed without expanding the card's footprint.
-
----
-
 ## Fetch Research section content from Substack API
 
 Explore using the Substack API to dynamically fetch content for the two cards in the Research section. Investigate implementation options (RSS feed, public API endpoints, caching strategy) before making any code changes.
 
 ---
 
-## Refresh top main navigation bar
+## Add upward-moving icon hover animation to nav bar
 
-Replace the current "glass" background with a solid color. Add an upward-moving icon hover animation to match the style of other buttons on the website.
+The solid background restyle has shipped (commit 758daa2). Remaining: add an upward-moving icon hover animation to the navigation to match the style of other buttons on the website.
 
 ---
 
