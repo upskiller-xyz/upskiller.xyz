@@ -41,15 +41,17 @@ Defined on `:root` and consumed via `var(--color-*)`:
 | `--color-primary-light` | `#4e378a` | Secondary purple — bullet marks, Follow-Us heading, privacy header border |
 | `--color-secondary` | `#00d67a` | Brand green — info-card bg, news-card bg, team content area |
 | `--color-secondary-light` | `#99efca` | Pale green — `.section-secondary` bg, privacy page text |
+| `--color-secondary-disabled` | `#33de95` | Muted green — `.info-card-button-wrapper.disabled`, `.team-tab-inactive` |
 | `--color-accent` | `#00ff66` | Bright green — info-card button wrapper, contact-button icon |
 | `--color-text-light` | `#f4fffa` | Off-white text for dark backgrounds |
 | `--color-text-dark` | `#180057` | Text on light backgrounds (same value as primary) |
 | `--color-follow-us` | `#4e378a` | Follow-Us heading (same value as primary-light) |
 | `--color-gray-400` | `#9ca3af` | Muted text — footer copyright/links, research card meta |
-
-**Known off-token colors** (still hard-coded and worth migrating):
-- `#33de95` — "disabled green" on `.info-card-button-wrapper.disabled` and `.team-tab-inactive`
-- `rgba(255, 255, 255, 0.1 / 0.15 / 0.3 / 0.6)` — translucent white borders/overlays on dark sections
+| `--divider-on-dark` | `rgba(255,255,255,0.1)` | Hairline dividers on purple sections — nav bottom, research toolbar |
+| `--overlay-on-dark-hover` | `rgba(255,255,255,0.1)` | Hover fill on transparent buttons over dark bg |
+| `--border-on-dark` | `rgba(255,255,255,0.15)` | Default subtle border on purple sections — research sort button |
+| `--border-on-dark-strong` | `rgba(255,255,255,0.3)` | Resting border for emphasized controls — research view-all, sort hover |
+| `--border-on-dark-hover` | `rgba(255,255,255,0.6)` | Hover border emphasis on purple sections |
 
 ### Typography
 
