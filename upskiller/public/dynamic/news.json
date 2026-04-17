@@ -1,5 +1,19 @@
 [
   {
+    "id": 9,
+    "title": "Alejandro and Chris present LUX at the AI in AEC conference in Helsinki",
+    "description": "Christoph Berkmiller and Alejandro Pacheco Diéguez will present our real-time ML work on daylight factor prediction at AI in AEC 2025 in Helsinki, showing how focused ML solutions can deliver real value in AEC today.",
+    "date": "2026-03-19",
+    "url": "https://aiaec2026.exordo.com/programme/presentation/49"
+  },
+  {
+    "id": 10,
+    "title": "upskiller Awarded Vinnova Innovative Startups Grant for AI-Driven Building Performance Predictor",
+    "description": "We have been granted 500,000 SEK through Vinnova's Innovativa Startups 2025 program to develop a Building Performance Predictor that integrates AI-based performance analysis into architectural design workflows, selected from 1,037 submissions.",
+    "date": "2025-10-24",
+    "url": "https://www.vinnova.se/p/byggprestandaprediktor-integration-av-ai-baserad-prestandaanalys-i-arkitektonisk-design/"
+  },
+  {
     "id": 1,
     "title": "Stasja Speaking at the Rhino Dev Meeting in Stockholm",
     "description": "Stasja has been invited to present the developments of Lux, our very first tool for automated daylight analysis.",
@@ -26,33 +40,5 @@
     "description": "upskiller has been awarded funding from Belysningsstiftelsen to develop a machine learning daylight analysis tool that integrates with BIM software for real-time predictions.",
     "date": "2025-03-20",
     "url": "https://www.mynewsdesk.com/se/belysningsstiftelsen/pressreleases/nytt-ai-projekt-saetter-dagsljuset-i-fokus-3376592"
-  },
-  {
-    "id": 5,
-    "title": "Dummy: upskiller Joins Nordic BIM Alliance",
-    "description": "Placeholder news entry used for testing scroll behaviour in the News card. upskiller joins a cross-border initiative to align BIM workflows across Nordic countries.",
-    "date": "2025-02-10",
-    "url": "#"
-  },
-  {
-    "id": 6,
-    "title": "Dummy: Preview of upcoming LUX LIVE for IFC beta",
-    "description": "Placeholder news entry used for testing scroll behaviour in the News card. A closed beta of LUX LIVE for IFC opens to a small group of architecture studios.",
-    "date": "2025-01-22",
-    "url": "#"
-  },
-  {
-    "id": 7,
-    "title": "Dummy: Talk at KTH Digital Futures Seminar",
-    "description": "Placeholder news entry used for testing scroll behaviour in the News card. The team shares findings on ML-driven daylight prediction at KTH Digital Futures.",
-    "date": "2024-12-05",
-    "url": "#"
-  },
-  {
-    "id": 8,
-    "title": "Dummy: New research partnership announced",
-    "description": "Placeholder news entry used for testing scroll behaviour in the News card. A multi-year research partnership with a leading Swedish university begins.",
-    "date": "2024-11-18",
-    "url": "#"
   }
 ]
