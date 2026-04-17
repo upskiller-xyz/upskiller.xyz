@@ -2,7 +2,6 @@ import React, { useState, useEffect } from 'react';
 import { ContactMethod } from '@shared/types';
 import { DataFetchService } from '../../services/DataFetchService';
 import { DataFile } from '../../constants/data-files.enums';
-import ContentTitle from './ContentTitle';
 import ContactGrid from './ContactGrid';
 
 const ContactUsContent: React.FC = () => {

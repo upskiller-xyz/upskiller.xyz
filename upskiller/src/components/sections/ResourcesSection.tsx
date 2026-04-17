@@ -30,13 +30,6 @@ const ResourcesSection: React.FC = () => {
     fetchResources();
   }, []);
 
-  const getResourceIcon = (resourceName: string) => {
-    // if (resourceName === 'Articles') {
-    //   return <ArticlesIcon />;
-    // }
-    return null;
-  };
-
   return (
     <Section id="resources" theme="primary">
       <div className="section-content">

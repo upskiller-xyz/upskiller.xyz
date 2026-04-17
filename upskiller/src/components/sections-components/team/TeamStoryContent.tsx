@@ -25,7 +25,7 @@ const TeamStoryContent: React.FC = () => {
   const renderParagraph = (para: StoryParagraph, idx: number) => {
     if (para.type === TeamStoryType.TEXT) {
       return (
-        <TeamStoryParagraph key={idx} index={idx}>
+        <TeamStoryParagraph key={idx}>
           {para.content}
         </TeamStoryParagraph>
       );
@@ -33,7 +33,7 @@ const TeamStoryContent: React.FC = () => {
 
     if (para.type === TeamStoryType.MIXED) {
       return (
-        <TeamStoryParagraph key={idx} index={idx}>
+        <TeamStoryParagraph key={idx}>
           {para.content}
           {para.links?.map((link, linkIdx) => (
             <TeamStoryLink key={linkIdx} href={link.href}>
