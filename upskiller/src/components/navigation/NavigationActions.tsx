@@ -1,11 +1,7 @@
 import React from 'react';
 import { MenuIcon } from '../svg';
 
-interface NavigationActionsProps {
-  scrollToSection: (sectionId: string) => void;
-}
-
-export const NavigationActions: React.FC<NavigationActionsProps> = ({ scrollToSection }) => {
+export const NavigationActions: React.FC = () => {
   return (
     <div className="navigation-actions">
       <div className="mobile-menu-button">

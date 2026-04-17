@@ -6,10 +6,12 @@ import PrivacyPage from "./components/pages/PrivacyPage";
 import TermsPage from "./components/pages/TermsPage";
 import AboutPage from "./components/pages/AboutPage";
 import ResearchPage from "./components/pages/ResearchPage";
+import ScrollToHash from "./components/ScrollToHash";
 
 export default function App() {
   return (
     <Router>
+      <ScrollToHash />
       <Routes>
         <Route path="/" element={<HomePage />} />
         <Route path="/privacy" element={<PrivacyPage />} />

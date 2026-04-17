@@ -3,13 +3,11 @@ import { useNavigate, useLocation } from 'react-router-dom';
 import { SectionId } from '../../constants/enums';
 
 interface NavigationLinksProps {
-  isScrolled: boolean;
   activeSection: string;
   scrollToSection: (sectionId: string) => void;
 }
 
 export const NavigationLinks: React.FC<NavigationLinksProps> = ({
-  isScrolled,
   activeSection,
   scrollToSection
 }) => {
@@ -39,9 +37,7 @@ export const NavigationLinks: React.FC<NavigationLinksProps> = ({
   };
 
   return (
-    <div className={`navigation-links ${
-       'bg-transparent'
-    }`}>
+    <div className="navigation-links bg-transparent">
       {Array.from(navItems.entries()).map(([sectionId, label]) => (
         <button
           key={sectionId}
