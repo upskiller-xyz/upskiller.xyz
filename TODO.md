@@ -6,12 +6,6 @@ Explore using the Substack API to dynamically fetch content for the two cards in
 
 ---
 
-## Add upward-moving icon hover animation to nav bar
-
-The solid background restyle has shipped (commit 758daa2). Remaining: add an upward-moving icon hover animation to the navigation to match the style of other buttons on the website.
-
----
-
 ## Set up `/lux` project with npm workspaces
 
 **Branch:** create a dedicated branch (not `feat/research-page`)
@@ -23,6 +17,7 @@ The solid background restyle has shipped (commit 758daa2). Remaining: add an upw
 ### Steps
 
 1. **Create a root `package.json`** with workspaces config:
+
    ```json
    {
      "name": "upskiller-xyz",
