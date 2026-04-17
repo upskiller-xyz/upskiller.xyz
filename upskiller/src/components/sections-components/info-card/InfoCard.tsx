@@ -10,7 +10,7 @@ import { InfoCardContent } from './InfoCardContent';
 import { InfoCardImage } from './InfoCardImage';
 import { InfoCardButton } from './InfoCardButton';
 
-interface InfoCardContent extends Partial<ProductContent> {
+interface InfoCardContentData extends Partial<ProductContent> {
   title?: string;
   name?: string;
   solution?: string;
@@ -27,7 +27,7 @@ interface InfoCardConfig {
 }
 
 interface InfoCardProps {
-  content: InfoCardContent;
+  content: InfoCardContentData;
   button?: ButtonBase;
   config?: InfoCardConfig;
 }
