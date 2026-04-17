@@ -52,11 +52,11 @@ const TeamSection: React.FC = () => {
   const currentMember = teamMembers.find(member => member.id === activeTab);
 
   return (
-    <Section id="team" theme="primary">
-      <SectionHeader 
+    <Section id="team" theme="secondary">
+      <SectionHeader
         content={{
           title: "Team",
-          theme: 'light'
+          theme: 'dark'
         }}
       />
 

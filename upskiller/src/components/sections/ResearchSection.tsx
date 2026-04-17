@@ -44,13 +44,13 @@ const ResearchSection: React.FC = () => {
   };
 
   return (
-    <Section id="research" theme="primary">
+    <Section id="research" theme="secondary">
       <div className="section-content">
         <SectionHeader
           content={{
             title: "Research",
             subtitle: "Open tools from active research. Free to use, built to last.",
-            theme: 'light'
+            theme: 'dark'
           }}
         />
 

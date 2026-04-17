@@ -28,12 +28,12 @@ const ProductsSection: React.FC = () => {
 
 
   return (
-    <Section id="products" theme="secondary">
-      <SectionHeader 
+    <Section id="products" theme="primary">
+      <SectionHeader
         content={{
           title: "Products",
           subtitle: "Tools built to solve real problems in AEC. No gimmicks.",
-          theme: 'dark'
+          theme: 'light'
         }}
       />
       

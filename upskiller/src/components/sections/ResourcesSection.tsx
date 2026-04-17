@@ -37,12 +37,12 @@ const ResourcesSection: React.FC = () => {
   };
 
   return (
-    <Section id="resources" theme="secondary">
+    <Section id="resources" theme="primary">
       <div className="section-content">
         <SectionHeader
           content={{
             title: "Resources",
-            theme: 'dark'
+            theme: 'light'
           }}
         />
 
