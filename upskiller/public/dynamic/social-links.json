@@ -7,7 +7,7 @@
     },
     {
       "name": "Email",
-      "url": "mailto:contact@upskiller.xyz",
+      "url": "mailto:info@upskiller.xyz",
       "icon": "https://upskiller-website.s3.fr-par.scw.cloud/upskiller/logo/email-dark.svg"
     },
     {
@@ -17,17 +17,17 @@
     },
     {
       "name": "Substack",
-      "url": "http://upskiller.substack.com/",
+      "url": "http://upskillerxyz.substack.com/",
       "icon": "https://upskiller-website.s3.fr-par.scw.cloud/upskiller/logo/substack.png"
     },
     {
-      "name": "LinkedIn", 
+      "name": "LinkedIn",
       "url": "https://www.linkedin.com/company/upskiller-xyz/",
       "icon": "https://upskiller-website.s3.fr-par.scw.cloud/upskiller/logo/linkedin-dark.svg"
     },
     {
       "name": "Instagram",
-      "url": "https://www.instagram.com/upskiller.xyz", 
+      "url": "https://www.instagram.com/upskiller.xyz",
       "icon": "https://upskiller-website.s3.fr-par.scw.cloud/upskiller/logo/instagram-dark.svg"
     }
   ]
