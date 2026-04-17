@@ -15,35 +15,6 @@
     ring-offset: 2px;
   }
 
-  .btn-primary {
-    background-color: #0284c7;
-    color: #f4fffa;
-  }
-  
-  .btn-primary:hover {
-    background-color: #0369a1;
-  }
-
-  .btn-secondary {
-    background-color: white;
-    color: #0284c7;
-    border: 2px solid #0284c7;
-  }
-  
-  .btn-secondary:hover {
-    background-color: #0284c7;
-    color: #f4fffa;
-  }
-
-  .btn-accent {
-    background-color: #10b981;
-    color: #f4fffa;
-  }
-  
-  .btn-accent:hover {
-    background-color: #059669;
-  }
-
   .btn-contact {
     color: #180057;
   }
@@ -137,7 +108,7 @@ nav {
 }
 
 .mobile-menu-button:hover {
-  color: #0284c7;
+  color: var(--color-secondary);
 }
 
 @media (min-width: 768px) {

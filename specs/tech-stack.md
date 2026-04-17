@@ -48,8 +48,6 @@ Defined on `:root` and consumed via `var(--color-*)`:
 | `--color-gray-400` | `#9ca3af` | Muted text — footer copyright/links, research card meta |
 
 **Known off-token colors** (still hard-coded and worth migrating):
-- `#0284c7` / `#0369a1` — legacy sky-blue used in `.btn-primary` and `.btn-secondary` (predates the purple/green theme)
-- `#10b981` / `#059669` — emerald used in `.btn-accent`
 - `#33de95` — "disabled green" on `.info-card-button-wrapper.disabled` and `.team-tab-inactive`
 - `rgba(255, 255, 255, 0.1 / 0.15 / 0.3 / 0.6)` — translucent white borders/overlays on dark sections
 
@@ -89,7 +87,7 @@ Defined on `:root` and consumed via `var(--color-*)`:
 - `.info-card-*` — purple-on-green product/resource card with `.info-card-title`, `.info-card-subtitle`, `.info-card-content`, `.info-card-features`, `.info-card-button-area`.
 - `.news-card-*` — scroll-within-card pattern for the news panel.
 - `.research-card-*` + `.research-grid-3col` — research tile and its asymmetric 3-column grid (first child spans 2×2 on `lg`).
-- `.btn-base` + `.btn-sm` / `.btn-md` / `.btn-lg` + variant (`.btn-primary`, `.btn-secondary`, `.btn-accent`, `.btn-contact`, `.btn-product`) + `.btn-enabled` / `.btn-disabled`.
+- `.btn-base` + `.btn-sm` / `.btn-md` / `.btn-lg` + variant (`.btn-contact`, `.btn-product`) + `.btn-enabled` / `.btn-disabled`.
 - `.reveal` / `.reveal.is-visible` — IntersectionObserver-driven fade-up (respects `prefers-reduced-motion`).
 - `.hero-element-visible` / `.hero-element-hidden` — sticky-hero slide-in state toggle.
 - `.brand-color-filter` — SVG-to-brand-purple image filter, reused for monochrome partner logos.
