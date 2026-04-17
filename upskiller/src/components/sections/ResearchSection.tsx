@@ -4,6 +4,7 @@ import { InfoCard } from '../sections-components/info-card/InfoCard';
 import { InfoCardButton } from '../sections-components/info-card/InfoCardButton';
 import Section from '../shared-components/Section';
 import SectionHeader from '../shared-components/SectionHeader';
+import Reveal from '../shared-components/Reveal';
 import { ResearchArticle } from '../../../../shared/types/research.types';
 import { fetchJsonWithFallback } from '../../utils/fetchWithFallback';
 import AssetPathManager from '../../utils/AssetPathManager';
@@ -55,19 +56,20 @@ const ResearchSection: React.FC = () => {
         />
 
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
-          {articles.map((article) => (
-            <InfoCard
-              key={article.id}
-              content={{
-                title: article.title,
-                subtitle: `${article.category} · ${formatDate(article.date)}`,
-                icon: <img src={article.image} alt={article.title} loading="lazy" />,
-              }}
-              config={{
-                className: 'transition-all duration-300 cursor-pointer',
-                onClick: () => navigate(`/research#${article.slug}`),
-              }}
-            />
+          {articles.map((article, index) => (
+            <Reveal key={article.id} index={index}>
+              <InfoCard
+                content={{
+                  title: article.title,
+                  subtitle: `${article.category} · ${formatDate(article.date)}`,
+                  icon: <img src={article.image} alt={article.title} loading="lazy" />,
+                }}
+                config={{
+                  className: 'transition-all duration-300 cursor-pointer',
+                  onClick: () => navigate(`/research#${article.slug}`),
+                }}
+              />
+            </Reveal>
           ))}
         </div>
 

@@ -2,6 +2,7 @@
 import React, { useState, useEffect } from 'react';
 import Section from '../shared-components/Section';
 import SectionHeader from '../shared-components/SectionHeader';
+import Reveal from '../shared-components/Reveal';
 import TeamContentArea from '../sections-components/team/TeamContentArea';
 import TeamTabs from '../sections-components/team/TeamTabs';
 import { TeamMember, TeamTab } from '@shared/types';
@@ -60,16 +61,18 @@ const TeamSection: React.FC = () => {
         }}
       />
 
-      <TeamContentArea 
-        currentMember={currentMember} 
-        onMemberHover={handleMemberHover}
-      />
+      <Reveal>
+        <TeamContentArea
+          currentMember={currentMember}
+          onMemberHover={handleMemberHover}
+        />
 
-      <TeamTabs 
-        tabs={tabs} 
-        activeTab={activeTab} 
-        onTabChange={handleTabChange} 
-      />
+        <TeamTabs
+          tabs={tabs}
+          activeTab={activeTab}
+          onTabChange={handleTabChange}
+        />
+      </Reveal>
     </Section>
   );
 };

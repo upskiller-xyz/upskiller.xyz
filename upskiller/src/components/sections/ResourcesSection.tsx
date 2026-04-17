@@ -4,6 +4,7 @@ import { InfoCard } from '../sections-components/info-card/InfoCard';
 import { NewsCard } from '../sections-components/news-card/NewsCard'
 import Section from '../shared-components/Section';
 import SectionHeader from '../shared-components/SectionHeader';
+import Reveal from '../shared-components/Reveal';
 import ContactUs from '../sections-components/ContactUs';
 import FollowUs from '../sections-components/FollowUs';
 import { Product } from '@shared/types';
@@ -48,7 +49,7 @@ const ResourcesSection: React.FC = () => {
 
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 mb-16">
         <div className="flex flex-col gap-8">
-        {resources.map((resource) => {
+        {resources.map((resource, index) => {
           const displayConfig = {
             descriptionLabel: "",
             itemsLabel: "What you'll find:",
@@ -67,21 +68,24 @@ const ResourcesSection: React.FC = () => {
           };
 
           return (
-            <InfoCard
-              key={resource.config.id}
-              content={{
-                ...resource.content,
-                title: resource.content.name,
-                items: resource.content.features,
-                ...displayConfig
-              }}
-              button={buttonConfig}
-              config={cardConfig}
-            />
+            <Reveal key={resource.config.id} index={index}>
+              <InfoCard
+                content={{
+                  ...resource.content,
+                  title: resource.content.name,
+                  items: resource.content.features,
+                  ...displayConfig
+                }}
+                button={buttonConfig}
+                config={cardConfig}
+              />
+            </Reveal>
           );
         })}
         </div>
-        <NewsCard className="transition-all duration-300" />
+        <Reveal index={1}>
+          <NewsCard className="transition-all duration-300" />
+        </Reveal>
         </div>
 
         <ContactUs />
