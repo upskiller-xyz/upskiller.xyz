@@ -54,8 +54,10 @@ const ResearchPage: React.FC = () => {
     });
   }, [data, activeCategory, sortBy]);
 
-  const handleArticleClick = (_article: ResearchArticle) => {
-    // Future: navigate to individual article page
+  const handleArticleClick = (article: ResearchArticle) => {
+    if (article.linkUrl) {
+      window.open(article.linkUrl, '_blank', 'noopener,noreferrer');
+    }
   };
 
   const toggleSort = () => {
@@ -112,7 +114,7 @@ const ResearchPage: React.FC = () => {
                 icon: <img src={article.image} alt={article.title} loading="lazy" />,
               }}
               config={{
-                className: 'transition-all duration-300 cursor-pointer',
+                className: 'transition-all duration-300 cursor-pointer info-card-link',
                 onClick: () => handleArticleClick(article),
               }}
             />

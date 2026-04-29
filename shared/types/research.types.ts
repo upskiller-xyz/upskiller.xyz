@@ -5,6 +5,7 @@ export interface ResearchArticle {
   date: string;
   image: string;
   slug: string;
+  linkUrl?: string;
 }
 
 export interface ResearchData {

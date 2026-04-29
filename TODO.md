@@ -61,3 +61,7 @@ Explore using the Substack API to dynamically fetch content for the two cards in
 - Each project keeps its own `package.json` for project-specific deps (e.g., upskiller has `react-markdown`, lux doesn't)
 - Shared components can be imported directly across projects instead of duplicating
 - Single lockfile at the root becomes the source of truth for dependency versions
+
+### Create subpage for the Brand Kit section. Content from docs.upskiller.xyz
+
+### Research section content.

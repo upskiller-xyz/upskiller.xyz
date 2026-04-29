@@ -65,8 +65,14 @@ const ResearchSection: React.FC = () => {
                   icon: <img src={article.image} alt={article.title} loading="lazy" />,
                 }}
                 config={{
-                  className: 'transition-all duration-300 cursor-pointer',
-                  onClick: () => navigate(`/research#${article.slug}`),
+                  className: `transition-all duration-300 cursor-pointer${article.linkUrl ? ' info-card-link' : ''}`,
+                  onClick: () => {
+                    if (article.linkUrl) {
+                      window.open(article.linkUrl, '_blank', 'noopener,noreferrer');
+                    } else {
+                      navigate(`/research#${article.slug}`);
+                    }
+                  },
                 }}
               />
             </Reveal>

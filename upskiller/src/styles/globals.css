@@ -851,6 +851,10 @@ h1, h2, h3, h4, h5, h6 {
   background-color: var(--color-secondary-disabled);
 }
 
+.team-tab-inactive:hover {
+  filter: brightness(0.92);
+}
+
 .primary-link {
   color: inherit;
   text-decoration: underline;
@@ -1267,6 +1271,11 @@ h1, h2, h3, h4, h5, h6 {
 
 .research-card:hover {
   transform: translateY(-4px);
+}
+
+/* Hover affordance for cards that act as external links */
+.info-card-link:hover {
+  filter: brightness(0.92);
 }
 
 .research-card-image {
