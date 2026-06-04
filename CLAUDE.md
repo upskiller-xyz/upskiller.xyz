@@ -41,7 +41,6 @@ upskiller.xyz/
 │       └── styles/globals.css
 ├── Dockerfile                 # Multi-stage Docker build
 ├── nginx.conf                 # Production nginx config
-├── TODO.md                    # Active task list
 └── CLAUDE.md                  # This file
 ```
 
