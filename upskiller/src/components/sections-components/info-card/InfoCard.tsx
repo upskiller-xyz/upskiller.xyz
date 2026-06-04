@@ -22,7 +22,6 @@ interface InfoCardContentData extends Partial<ProductContent> {
 
 interface InfoCardConfig {
   className?: string;
-  style?: React.CSSProperties;
   onClick?: () => void;
 }
 

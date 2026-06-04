@@ -21,9 +21,8 @@ const TeamMaskOverlay: React.FC<TeamMaskOverlayProps> = ({
 }) => (
   <div className="absolute inset-0 pointer-events-none z-10">
     <svg
-      className="w-full h-full"
+      className="w-full h-full pointer-events-none"
       viewBox="0 0 1408 736"
-      style={{ pointerEvents: 'none' }}
     >
       {masks.map((mask) => (
         <g key={mask.id}>
@@ -32,10 +31,7 @@ const TeamMaskOverlay: React.FC<TeamMaskOverlayProps> = ({
             points={mask.polygonPoints}
             fill="transparent"
             stroke="none"
-            style={{ 
-              pointerEvents: 'auto',
-              cursor: 'pointer'
-            }}
+            className="pointer-events-auto cursor-pointer"
             onMouseEnter={() => onMouseEnter(mask.id)}
             onMouseLeave={onMouseLeave}
           />
