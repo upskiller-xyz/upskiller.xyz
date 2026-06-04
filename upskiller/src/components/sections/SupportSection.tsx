@@ -5,9 +5,11 @@ import PartnersGrid from '../sections-components/partners/PartnersGrid';
 import { Partner, SectionTheme, ContentTheme } from '@shared/types';
 import { fetchJsonWithFallback } from '../../utils/fetchWithFallback';
 import AssetPathManager from '../../utils/AssetPathManager';
+import { useSectionHeader } from '../../hooks/useSectionHeader';
 
 const SupportSection: React.FC = () => {
   const [partners, setPartners] = useState<Partner[]>([]);
+  const header = useSectionHeader('support');
 
   useEffect(() => {
     const fetchPartners = async () => {
@@ -28,7 +30,8 @@ const SupportSection: React.FC = () => {
     <Section id="support" theme={SectionTheme.Support}>
       <SectionHeader
         content={{
-          title: "Trusted by",
+          title: header?.title ?? '',
+          subtitle: header?.subtitle,
           theme: ContentTheme.Dark
         }}
       />

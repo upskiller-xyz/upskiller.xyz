@@ -6,9 +6,11 @@ import ProductGrid from '../sections-components/ProductGrid';
 import { Product, SectionTheme, ContentTheme } from '@shared/types';
 import { fetchJsonWithFallback } from '../../utils/fetchWithFallback';
 import AssetPathManager from '../../utils/AssetPathManager';
+import { useSectionHeader } from '../../hooks/useSectionHeader';
 
 const ProductsSection: React.FC = () => {
   const [products, setProducts] = useState<Product[]>([]);
+  const header = useSectionHeader('products');
 
   useEffect(() => {
     const fetchProducts = async () => {
@@ -31,8 +33,8 @@ const ProductsSection: React.FC = () => {
     <Section id="products" theme={SectionTheme.Primary}>
       <SectionHeader
         content={{
-          title: "Products",
-          subtitle: "Tools built to make AECO work easier",
+          title: header?.title ?? '',
+          subtitle: header?.subtitle,
           theme: ContentTheme.Light
         }}
       />

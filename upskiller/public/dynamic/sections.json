@@ -1,0 +1,19 @@
+{
+  "products": {
+    "title": "Products",
+    "subtitle": "Tools built to make AECO work easier"
+  },
+  "resources": {
+    "title": "Resources"
+  },
+  "support": {
+    "title": "Trusted by"
+  },
+  "team": {
+    "title": "Team"
+  },
+  "research": {
+    "title": "Research",
+    "subtitle": "Open tools from active research. Free to use, built to last."
+  }
+}

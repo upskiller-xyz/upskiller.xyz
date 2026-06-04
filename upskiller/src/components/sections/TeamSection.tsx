@@ -8,11 +8,13 @@ import TeamTabs from '../sections-components/team/TeamTabs';
 import { TeamMember, TeamTab, SectionTheme, ContentTheme } from '@shared/types';
 import { fetchJsonWithFallback } from '../../utils/fetchWithFallback';
 import AssetPathManager from '../../utils/AssetPathManager';
+import { useSectionHeader } from '../../hooks/useSectionHeader';
 
 const TeamSection: React.FC = () => {
   const [activeTab, setActiveTab] = useState('team');
   const [teamMembers, setTeamMembers] = useState<TeamMember[]>([]);
   const [originalTab, setOriginalTab] = useState('team');
+  const header = useSectionHeader('team');
 
   useEffect(() => {
     const fetchTeamData = async () => {
@@ -56,7 +58,8 @@ const TeamSection: React.FC = () => {
     <Section id="team" theme={SectionTheme.Secondary}>
       <SectionHeader
         content={{
-          title: "Team",
+          title: header?.title ?? '',
+          subtitle: header?.subtitle,
           theme: ContentTheme.Dark
         }}
       />

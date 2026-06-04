@@ -10,9 +10,11 @@ import FollowUs from '../sections-components/FollowUs';
 import { Product, SectionTheme, ContentTheme } from '@shared/types';
 import { fetchJsonWithFallback } from '../../utils/fetchWithFallback';
 import AssetPathManager from '../../utils/AssetPathManager';
+import { useSectionHeader } from '../../hooks/useSectionHeader';
 
 const ResourcesSection: React.FC = () => {
   const [resources, setResources] = useState<Product[]>([]);
+  const header = useSectionHeader('resources');
 
   useEffect(() => {
     const fetchResources = async () => {
@@ -35,7 +37,8 @@ const ResourcesSection: React.FC = () => {
       <div className="section-content">
         <SectionHeader
           content={{
-            title: "Resources",
+            title: header?.title ?? '',
+            subtitle: header?.subtitle,
             theme: ContentTheme.Light
           }}
         />

@@ -9,6 +9,7 @@ import { ResearchArticle } from '../../../../shared/types/research.types';
 import { SectionTheme, ContentTheme } from '@shared/types';
 import { fetchJsonWithFallback } from '../../utils/fetchWithFallback';
 import AssetPathManager from '../../utils/AssetPathManager';
+import { useSectionHeader } from '../../hooks/useSectionHeader';
 
 const FEATURED_COUNT = 2;
 
@@ -24,6 +25,7 @@ const formatDate = (dateString: string) => {
 const ResearchSection: React.FC = () => {
   const [articles, setArticles] = useState<ResearchArticle[]>([]);
   const navigate = useNavigate();
+  const header = useSectionHeader('research');
 
   useEffect(() => {
     const fetchResearch = async () => {
@@ -50,8 +52,8 @@ const ResearchSection: React.FC = () => {
       <div className="section-content">
         <SectionHeader
           content={{
-            title: "Research",
-            subtitle: "Open tools from active research. Free to use, built to last.",
+            title: header?.title ?? '',
+            subtitle: header?.subtitle,
             theme: ContentTheme.Dark
           }}
         />
