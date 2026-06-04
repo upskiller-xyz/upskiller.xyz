@@ -1,8 +1,9 @@
 import React from 'react';
+import { SectionTheme } from '@shared/types';
 
 interface SectionProps {
   id: string;
-  theme: 'primary' | 'secondary' | 'support';
+  theme: SectionTheme;
   children: React.ReactNode;
 }
 

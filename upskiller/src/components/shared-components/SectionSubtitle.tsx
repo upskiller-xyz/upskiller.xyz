@@ -1,14 +1,15 @@
 import React from 'react';
+import { ContentTheme } from '@shared/types';
 
 interface SectionSubtitleProps {
   children: React.ReactNode;
-  theme?: 'light' | 'dark';
+  theme?: ContentTheme;
   className?: string;
 }
 
 const SectionSubtitle: React.FC<SectionSubtitleProps> = ({
   children,
-  theme = 'dark',
+  theme = ContentTheme.Dark,
   className = ''
 }) => (
   <p className={`section-subtitle section-subtitle-${theme} ${className}`}>

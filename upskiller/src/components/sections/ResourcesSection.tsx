@@ -7,7 +7,7 @@ import SectionHeader from '../shared-components/SectionHeader';
 import Reveal from '../shared-components/Reveal';
 import ContactUs from '../sections-components/ContactUs';
 import FollowUs from '../sections-components/FollowUs';
-import { Product } from '@shared/types';
+import { Product, SectionTheme, ContentTheme } from '@shared/types';
 import { fetchJsonWithFallback } from '../../utils/fetchWithFallback';
 import AssetPathManager from '../../utils/AssetPathManager';
 
@@ -31,12 +31,12 @@ const ResourcesSection: React.FC = () => {
   }, []);
 
   return (
-    <Section id="resources" theme="primary">
+    <Section id="resources" theme={SectionTheme.Primary}>
       <div className="section-content">
         <SectionHeader
           content={{
             title: "Resources",
-            theme: 'light'
+            theme: ContentTheme.Light
           }}
         />
 

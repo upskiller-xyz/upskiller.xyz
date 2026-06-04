@@ -5,7 +5,7 @@ import SectionHeader from '../shared-components/SectionHeader';
 import Reveal from '../shared-components/Reveal';
 import TeamContentArea from '../sections-components/team/TeamContentArea';
 import TeamTabs from '../sections-components/team/TeamTabs';
-import { TeamMember, TeamTab } from '@shared/types';
+import { TeamMember, TeamTab, SectionTheme, ContentTheme } from '@shared/types';
 import { fetchJsonWithFallback } from '../../utils/fetchWithFallback';
 import AssetPathManager from '../../utils/AssetPathManager';
 
@@ -53,11 +53,11 @@ const TeamSection: React.FC = () => {
   const currentMember = teamMembers.find(member => member.id === activeTab);
 
   return (
-    <Section id="team" theme="secondary">
+    <Section id="team" theme={SectionTheme.Secondary}>
       <SectionHeader
         content={{
           title: "Team",
-          theme: 'dark'
+          theme: ContentTheme.Dark
         }}
       />
 

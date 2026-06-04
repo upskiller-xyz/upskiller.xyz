@@ -3,7 +3,7 @@ import React, { useState, useEffect } from 'react';
 import Section from '../shared-components/Section';
 import SectionHeader from '../shared-components/SectionHeader';
 import ProductGrid from '../sections-components/ProductGrid';
-import { Product } from '@shared/types';
+import { Product, SectionTheme, ContentTheme } from '@shared/types';
 import { fetchJsonWithFallback } from '../../utils/fetchWithFallback';
 import AssetPathManager from '../../utils/AssetPathManager';
 
@@ -28,12 +28,12 @@ const ProductsSection: React.FC = () => {
 
 
   return (
-    <Section id="products" theme="primary">
+    <Section id="products" theme={SectionTheme.Primary}>
       <SectionHeader
         content={{
           title: "Products",
           subtitle: "Commercial tools built to solve AECO problems",
-          theme: 'light'
+          theme: ContentTheme.Light
         }}
       />
       

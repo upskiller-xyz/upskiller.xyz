@@ -1,11 +1,12 @@
 import React from 'react';
+import { ContentTheme } from '@shared/types';
 import SectionTitle from './SectionTitle';
 import SectionSubtitle from './SectionSubtitle';
 
 interface SectionHeaderContent {
   title: string;
   subtitle?: string;
-  theme?: 'light' | 'dark';
+  theme?: ContentTheme;
 }
 
 interface SectionHeaderProps {

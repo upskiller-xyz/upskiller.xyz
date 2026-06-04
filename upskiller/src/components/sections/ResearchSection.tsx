@@ -6,6 +6,7 @@ import Section from '../shared-components/Section';
 import SectionHeader from '../shared-components/SectionHeader';
 import Reveal from '../shared-components/Reveal';
 import { ResearchArticle } from '../../../../shared/types/research.types';
+import { SectionTheme, ContentTheme } from '@shared/types';
 import { fetchJsonWithFallback } from '../../utils/fetchWithFallback';
 import AssetPathManager from '../../utils/AssetPathManager';
 
@@ -45,13 +46,13 @@ const ResearchSection: React.FC = () => {
   };
 
   return (
-    <Section id="research" theme="secondary">
+    <Section id="research" theme={SectionTheme.Secondary}>
       <div className="section-content">
         <SectionHeader
           content={{
             title: "Research",
             subtitle: "Open tools from active research. Free to use, built to last.",
-            theme: 'dark'
+            theme: ContentTheme.Dark
           }}
         />
 
