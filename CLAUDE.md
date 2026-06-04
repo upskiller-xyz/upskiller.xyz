@@ -1,95 +1,78 @@
 # CLAUDE.md — upskiller.xyz
 
-Project instructions for Claude. This file is the source of truth for conventions, structure, and workflow.
+Agent working instructions for this repo. **These instructions override default behavior — follow them exactly.**
 
-## Project Overview
+For *what* we're building and *why*, read the specs — don't duplicate them here:
 
-- **Repository**: upskiller.xyz
-- **Purpose**: Multi-website platform — company site and product tools
-- **Tech Stack**: React 18, TypeScript, Tailwind CSS v4, Vite 5, react-router-dom
-- **Deployment**: Docker + nginx (static build)
+- [specs/mission.md](specs/mission.md) — what the product is and who it serves
+- [specs/tech-stack.md](specs/tech-stack.md) — tech choices, deployment, and the **design system** (colors, typography, spacing, component patterns). This is the source of truth for design tokens.
+- [specs/roadmap.md](specs/roadmap.md) — phased upcoming work
+- `specs/<date>-<feature>/` — per-feature `requirements.md` → `plan.md` → `validation.md`
+
+Design tokens themselves live on `:root` in `upskiller/src/styles/globals.css` and in `shared/fonts/automate.css`. Reference existing tokens — don't introduce new hex values without updating [specs/tech-stack.md](specs/tech-stack.md).
 
 ---
 
-## Project Structure
+## Repo Layout
 
 ```
 upskiller.xyz/
-├── shared/                    # Cross-project reusable assets
-│   ├── components/            # SharedButton, ContactButton, SharedLink, etc.
-│   ├── fonts/                 # AUTOMATE font (woff)
-│   ├── styles/shared.css      # Shared CSS
-│   └── types/                 # Shared TypeScript types (button, contact, product, team, etc.)
-├── upskiller/                 # Main company website
+├── shared/        # Cross-project assets: SharedButton/SharedLink/ContactButton, fonts, shared.css, types
+├── upskiller/     # Main company website (React app)
 │   ├── public/
-│   │   ├── dynamic/           # JSON data files (products, news, team, research, etc.)
-│   │   ├── legal/             # Markdown legal pages (about, privacy, tc)
-│   │   └── images/            # Static images
+│   │   ├── dynamic/   # JSON content files (see table below)
+│   │   ├── legal/     # Markdown legal pages (about, privacy, tc)
+│   │   └── images/    # Static images
 │   └── src/
-│       ├── App.tsx            # Router: /, /privacy, /terms, /about, /research
-│       ├── main.tsx           # Entry point
+│       ├── App.tsx                  # Router: /, /about, /privacy, /terms, /research
 │       ├── components/
-│       │   ├── Navigation.tsx
-│       │   ├── sections/      # Page sections (Hero, Products, Research, Resources, Support, Team)
-│       │   ├── sections-components/  # Section sub-components (info-card, news-card, news-panel, hero, footer, partners, team)
-│       │   ├── pages/         # Route pages (HomePage, AboutPage, PrivacyPage, TermsPage, ResearchPage)
-│       │   ├── shared-components/    # Reusable page-level components (Section, SectionTitle, PageHeader, PageFooter, ComponentGrid)
-│       │   ├── shared-subcomponents/ # Smaller reusable pieces (ContactGrid, HeroTextGroup, TeamDetails, etc.)
-│       │   ├── document-components/  # Markdown document rendering
-│       │   ├── loading/       # Loading/error state components
-│       │   └── svg/           # SVG icon components
-│       └── styles/globals.css
-├── Dockerfile                 # Multi-stage Docker build
-├── nginx.conf                 # Production nginx config
-└── CLAUDE.md                  # This file
+│       │   ├── sections/             # Page sections (Hero, Products, Research, Resources, Support, Team)
+│       │   ├── sections-components/   # Section sub-components (info-card, news-card, news-panel, hero, partners, team)
+│       │   ├── pages/                # Route pages (HomePage, AboutPage, PrivacyPage, TermsPage, ResearchPage)
+│       │   ├── shared-components/     # Page-level reusables (Section, SectionTitle, PageHeader, PageFooter)
+│       │   ├── shared-subcomponents/  # Smaller reusable pieces (ContactGrid, HeroTextGroup, TeamDetails, …)
+│       │   ├── document-components/   # Markdown document rendering
+│       │   ├── loading/              # Loading/error states
+│       │   └── svg/                  # SVG icon components
+│       └── styles/globals.css        # Design tokens (:root)
+├── lux/           # LUX product surface (skeleton; see roadmap Phase 3)
+├── Dockerfile     # Multi-stage Docker build
+└── nginx.conf     # Production nginx config
 ```
 
-## Dynamic Data
+`@shared` path alias resolves to `../shared/`.
 
-Content is driven by JSON files in `upskiller/public/dynamic/`:
+## Dynamic Content
 
-| File              | Purpose                        |
-|-------------------|--------------------------------|
-| `products.json`   | Product cards (LUX LIVE for Revit, LUX LIVE for IFC) |
-| `news.json`       | News items                     |
-| `research.json`   | Research section content       |
-| `resources.json`  | Resources section content      |
-| `team.json`       | Team member profiles           |
-| `team-story.json` | Team story narrative           |
-| `hero-texts.json` | Hero section text variants     |
-| `contacts.json`   | Contact information            |
-| `partners.json`   | Partner logos/info              |
-| `social-links.json` | Social media links           |
+Site copy is JSON in `upskiller/public/dynamic/` so non-engineers can edit it without touching React:
 
-## Products
-
-- **LUX LIVE for Revit** — Revit plugin for near-real-time daylight analysis (available)
-- **LUX LIVE for IFC** — Web platform for daylight analysis of IFC models (upcoming)
+| File | Purpose |
+|---|---|
+| `products.json` | Product cards (LUX LIVE for Revit, LUX LIVE for IFC) |
+| `news.json` | News items |
+| `research.json` | Research articles |
+| `resources.json` | Resources cards |
+| `team.json` / `team-story.json` | Team profiles and story narrative |
+| `hero-texts.json` | Hero text variants |
+| `contacts.json` / `social-links.json` / `partners.json` | Contact, social, and partner data |
 
 ---
 
 ## Development
 
 ```bash
-# Setup
 cd upskiller
 npm install
-
-# Development
-npm run dev          # Start dev server (localhost:8080)
-npm run build        # tsc + vite build
-npm run lint         # ESLint
-npm run preview      # Preview production build
-
-# Quality checks before committing
-npm run lint && npm run build
+npm run dev      # dev server on localhost:8080
+npm run build    # tsc + vite build
+npm run lint     # ESLint (--max-warnings 0)
+npm run preview  # preview production build
 ```
 
-### Key Configuration
-
-- **Dev server port**: 8080 (configured in `vite.config.ts`)
-- **Shared imports**: Use `@shared` alias (resolves to `../shared/`)
-- **Build artifacts**: gitignored — never commit `dist/` or compiled `.js` files
+- **Before committing**, `npm run lint && npm run build` must pass.
+- Build artifacts are gitignored — never commit `dist/` or compiled `.js` files.
+- Import shared assets via the `@shared` alias.
+- Keep pull requests scoped to a single feature or fix so they stay easy to review.
 
 ---
 
@@ -135,16 +118,3 @@ Examples:
 - Keep the first line under 72 characters
 - Add a body after a blank line for complex changes
 - Mark breaking changes with `!` after the type or a `BREAKING CHANGE` footer
-
----
-
-## Design System
-
-- **Primary color**: Purple (#180057)
-- **Secondary color**: Green (#00d67a)
-- **Typography**: AUTOMATE — single self-hosted family (`var(--font-automate)`), `AUTOMATELight.woff` (300) and `AUTOMATEBold.woff` (700) from `shared/fonts/`. No Inter or Poppins.
-- **Styling**: Tailwind CSS v4 utility-first approach
-
----
-
-_This file is maintained to keep Claude context accurate across sessions._
