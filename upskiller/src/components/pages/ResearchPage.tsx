@@ -2,6 +2,7 @@ import React, { useState, useEffect, useMemo } from 'react';
 import Navigation from '../Navigation';
 import PageFooter from '../shared-components/PageFooter';
 import { InfoCard } from '../sections-components/info-card/InfoCard';
+import { SharedButton } from '@shared/components';
 import { ResearchArticle, ResearchData } from '../../../../shared/types/research.types';
 import { fetchJsonWithFallback } from '../../utils/fetchWithFallback';
 import AssetPathManager from '../../utils/AssetPathManager';
@@ -85,22 +86,28 @@ const ResearchPage: React.FC = () => {
         <div className="research-toolbar">
           <div className="research-categories">
             {data.categories.map((category) => (
-              <button
+              <SharedButton
                 key={category}
-                className={`research-category-tab ${
-                  activeCategory === category ? 'research-category-active' : ''
-                }`}
-                onClick={() => setActiveCategory(category)}
+                appearance={{
+                  variant: 'secondary',
+                  className: `research-category-tab ${
+                    activeCategory === category ? 'research-category-active' : ''
+                  }`,
+                }}
+                behavior={{ onClick: () => setActiveCategory(category) }}
               >
                 {category}
-              </button>
+              </SharedButton>
             ))}
           </div>
 
           <div className="research-toolbar-actions">
-            <button className="research-sort-button" onClick={toggleSort}>
+            <SharedButton
+              appearance={{ variant: 'secondary', className: 'research-sort-button' }}
+              behavior={{ onClick: toggleSort }}
+            >
               Sort {sortBy === 'newest' ? '↓' : '↑'}
-            </button>
+            </SharedButton>
           </div>
         </div>
 
