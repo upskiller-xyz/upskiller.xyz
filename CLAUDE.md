@@ -143,7 +143,7 @@ Examples:
 
 - **Primary color**: Purple (#180057)
 - **Secondary color**: Green (#00d67a)
-- **Typography**: Inter (body), Poppins (headings), AUTOMATE (brand font)
+- **Typography**: AUTOMATE — single self-hosted family (`var(--font-automate)`), `AUTOMATELight.woff` (300) and `AUTOMATEBold.woff` (700) from `shared/fonts/`. No Inter or Poppins.
 - **Styling**: Tailwind CSS v4 utility-first approach
 
 ---
