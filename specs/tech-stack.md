@@ -21,6 +21,19 @@ upskiller.xyz is a client-rendered React application served as static files behi
 - `lux/` — the LUX product surface (skeleton; see roadmap Phase 3)
 - `@shared` path alias resolves to `../shared/` via `vite-tsconfig-paths`
 
+### Multi-Site Architecture (decided in [#23](https://github.com/upskiller-xyz/upskiller.xyz/issues/23))
+
+Each site (`upskiller/`, `lux/`, future `graph/`) is its own workspace deploying to its own subdomain, with its **own** `src/features/` — feature folders are app-internal (per bulletproof-react) and never live at the repo root. The per-site boundary is the package/deploy boundary; the per-feature boundary is app-internal.
+
+Two tiers of "shared":
+
+1. Root `shared/` (`@shared`) — the cross-site design system and primitives only (`SharedButton`, tokens, themes, fonts). Not a home for full features.
+2. Each site's `src/components/` — pieces reused within that one site.
+
+Promotion path: feature → site `components/` → root `shared/`.
+
+**Cross-site features** (e.g. news, contact, footer): promote the reusable *pieces* to `shared/` and let each site compose its own thin feature from them — features stay app-local with zero cross-site coupling. Only escalate a feature to a shared package once it is demonstrably identical across ≥2 sites. Pairs with the npm-workspaces setup ([#32](https://github.com/upskiller-xyz/upskiller.xyz/issues/32)).
+
 ## Deployment
 
 - **Docker** multi-stage build: Node for `npm run build`, nginx for serving the static `dist/`
