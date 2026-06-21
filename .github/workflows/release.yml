@@ -34,7 +34,7 @@ jobs:
       - uses: actions/checkout@34e114876b0b11c390a56381ad16ebd13914f8d5 # v4.3.1
         with:
           fetch-depth: 0 # release.sh needs full history + tags for `git describe`
-      - uses: upskiller-xyz/infra.lux/.github/actions/release@master
+      - uses: upskiller-xyz/infra.lux/.github/actions/release@afc3ddebc90543a69b92c650c47e2d0ab0de2088 # master 2026-06-21
         with:
           image: upskiller-web
           namespace: web-nsp
@@ -48,7 +48,9 @@ jobs:
     steps:
       - name: Install Scaleway CLI
         run: |
-          curl -sL "https://github.com/scaleway/scaleway-cli/releases/latest/download/scaleway-cli_linux_amd64" -o scw
+          SCW_VERSION="2.57.0"
+          curl -sL "https://github.com/scaleway/scaleway-cli/releases/download/v${SCW_VERSION}/scaleway-cli_${SCW_VERSION}_linux_amd64" -o scw
+          echo "cda706f207e114772d86854c0c188f798bd730eedd7ccf44142dca212e603fa2  scw" | sha256sum -c -
           chmod +x scw && sudo mv scw /usr/local/bin/
 
       - name: Deploy to Scaleway Serverless Container
@@ -59,6 +61,7 @@ jobs:
           SCW_DEFAULT_REGION: fr-par
         run: |
           semver="${GITHUB_REF_NAME#v}"
+          # web-nsp = registry namespace (image storage); upskiller-nsp = container namespace (serverless runtime) — distinct Scaleway concepts.
           image="rg.fr-par.scw.cloud/web-nsp/upskiller-web:${semver}"
 
           namespace_id=$(scw container namespace list name=upskiller-nsp -o json | jq -r '.[0].id')

@@ -15,23 +15,24 @@ jobs:
 
     steps:
       - name: Checkout
-        uses: actions/checkout@v4
+        uses: actions/checkout@34e114876b0b11c390a56381ad16ebd13914f8d5 # v4.3.1
         with:
           fetch-depth: 0
+          ref: ${{ github.event.repository.default_branch }}
 
       - name: Generate full changelog
-        uses: orhun/git-cliff-action@v4
+        uses: orhun/git-cliff-action@f50e11560dce63f7c33227798f90b924471a88b5 # v4.8.0
         with:
-          args: --verbose
+          args: --verbose --tag ${{ github.ref_name }}
         env:
           OUTPUT: CHANGELOG.md
           GITHUB_REPO: ${{ github.repository }}
 
       - name: Generate release notes
-        uses: orhun/git-cliff-action@v4
+        uses: orhun/git-cliff-action@f50e11560dce63f7c33227798f90b924471a88b5 # v4.8.0
         id: release-notes
         with:
-          args: --verbose --latest --strip all
+          args: --verbose --latest --strip all --tag ${{ github.ref_name }}
         env:
           OUTPUT: NOTES.md
           GITHUB_REPO: ${{ github.repository }}
@@ -45,7 +46,7 @@ jobs:
           git push origin HEAD:${{ github.event.repository.default_branch }}
 
       - name: Create GitHub Release
-        uses: softprops/action-gh-release@v2
+        uses: softprops/action-gh-release@3bb12739c298aeb8a4eeaf626c5b8d85266b0e65 # v2.6.2
         with:
           body_path: NOTES.md
           tag_name: ${{ github.ref_name }}
