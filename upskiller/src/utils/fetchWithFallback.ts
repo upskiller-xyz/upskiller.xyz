@@ -6,6 +6,21 @@ export const fetchWithFallback = async (
   localPath: string,
   options: RequestInit = {}
 ): Promise<Response> => {
+  // Skip external requests during development (localhost)
+  const isDevelopment = window.location.hostname === 'localhost' || window.location.hostname === '127.0.0.1';
+  
+  if (isDevelopment) {
+    console.log('Development mode detected, using local file:', localPath);
+    const fallbackResponse = await fetch(localPath, options);
+    if (fallbackResponse.ok) {
+      console.log('Successfully fetched from local file');
+      return fallbackResponse;
+    } else {
+      throw new Error(`Local file fetch failed: ${fallbackResponse.status}`);
+    }
+  }
+
+  // Production: Try external first, then fallback to local
   try {
     console.log('Attempting to fetch from Scaleway:', scalewayUrl);
     const response = await fetch(scalewayUrl, options);

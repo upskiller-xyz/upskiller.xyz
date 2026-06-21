@@ -5,7 +5,7 @@ import AssetPathManager from '../../utils/AssetPathManager';
 interface SocialLinkProps {
   name: string;
   url: string;
-  icon: string; // Now expects filename only, not full URL
+  icon: string; // Expects filename only, not full URL
 }
 
 const SocialLink: React.FC<SocialLinkProps> = ({ name, url, icon }) => (
