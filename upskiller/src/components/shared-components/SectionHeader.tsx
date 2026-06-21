@@ -1,11 +1,12 @@
 import React from 'react';
+import { ContentTheme } from '@shared/types';
 import SectionTitle from './SectionTitle';
 import SectionSubtitle from './SectionSubtitle';
 
 interface SectionHeaderContent {
   title: string;
   subtitle?: string;
-  theme?: 'light' | 'dark';
+  theme?: ContentTheme;
 }
 
 interface SectionHeaderProps {
@@ -22,7 +23,7 @@ const SectionHeader: React.FC<SectionHeaderProps> = ({
       {content.title}
     </SectionTitle>
     {content.subtitle && (
-      <SectionSubtitle>
+      <SectionSubtitle theme={content.theme}>
         {content.subtitle}
       </SectionSubtitle>
     )}

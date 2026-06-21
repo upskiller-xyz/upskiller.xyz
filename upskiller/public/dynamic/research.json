@@ -1,0 +1,49 @@
+{
+  "categories": ["All", "Publication", "Conclusion", "Milestone", "Release"],
+  "articles": [
+    {
+      "id": "model-spec-approach",
+      "title": "LUX web for IFC",
+      "category": "Release",
+      "date": "2026-03-25",
+      "image": "/images/research/ifc-web.jpg",
+      "slug": "model-spec-approach"
+    },
+    {
+      "id": "lux-daylight-factor",
+      "title": "LUX: ML-powered daylight analysis in Revit, open-sourced",
+      "category": "Release",
+      "date": "2025-09-04",
+      "image": "/images/research/rhino-inside-ux.jpg",
+      "slug": "lux-daylight-factor",
+      "linkUrl": "https://github.com/upskiller-xyz/Lux/"
+    },
+    {
+      "id": "ljuskultur-dagsljusfaktor",
+      "title": "Daylight factor: the power of lagom",
+      "category": "Publication",
+      "date": "2025-12-05",
+      "image": "/images/research/ljuskultur-2026.png",
+      "slug": "ljuskultur-dagsljusfaktor",
+      "linkUrl": "https://ljuskultur.se/artiklar/dagsljusfaktor-kraften-av-lagom/"
+    },
+    {
+      "id": "ai-aec-2026",
+      "title": "AI in AEC 2026 Helsinki: presentation",
+      "category": "Publication",
+      "date": "2026-02-28",
+      "image": "/images/research/ai-aec-2026.png",
+      "slug": "ai-aec-2026",
+      "linkUrl": "https://aiaec2026.exordo.com/programme/presentation/49"
+    },
+    {
+      "id": "graphs4co2",
+      "title": "Graphs4CO2: graph ML for CO₂ data in building design",
+      "category": "Milestone",
+      "date": "2026-02-15",
+      "image": "/images/research/logo-smart-built.png",
+      "slug": "graphs4co2",
+      "linkUrl": "https://smartbuilt.se/in-english/projects/information-infrastructure/graphs4co2/"
+    }
+  ]
+}

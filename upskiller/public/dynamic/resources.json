@@ -18,6 +18,19 @@
         "buttonText": "Visit our Substack",
         "linkUrl": "https://upskillerxyz.substack.com"
       }
+    },
+    {
+      "content": {
+        "name": "Brand Kit",
+        "subtitle": "You are a designer, partner or press. Access our brand guidelines, company information and logos."
+      },
+      "config": {
+        "id": "brand-kit",
+        "status": "available",
+        "color": "purple",
+        "buttonText": "Get Brand Assets",
+        "linkUrl": "https://docs.upskiller.xyz/docs/overview/company/branding"
+      }
     }
   ]
 }

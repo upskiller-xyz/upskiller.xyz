@@ -2,12 +2,14 @@ import React, { useState, useEffect } from 'react';
 import Section from '../shared-components/Section';
 import SectionHeader from '../shared-components/SectionHeader';
 import PartnersGrid from '../sections-components/partners/PartnersGrid';
-import { Partner } from '@shared/types';
+import { Partner, SectionTheme, ContentTheme } from '@shared/types';
 import { fetchJsonWithFallback } from '../../utils/fetchWithFallback';
 import AssetPathManager from '../../utils/AssetPathManager';
+import { useSectionHeader } from '../../hooks/useSectionHeader';
 
 const SupportSection: React.FC = () => {
   const [partners, setPartners] = useState<Partner[]>([]);
+  const header = useSectionHeader('support');
 
   useEffect(() => {
     const fetchPartners = async () => {
@@ -25,11 +27,12 @@ const SupportSection: React.FC = () => {
     fetchPartners();
   }, []);
   return (
-    <Section id="support" theme="support">
-      <SectionHeader 
+    <Section id="support" theme={SectionTheme.Support}>
+      <SectionHeader
         content={{
-          title: "Trusted by",
-          theme: 'dark'
+          title: header?.title ?? '',
+          subtitle: header?.subtitle,
+          theme: ContentTheme.Dark
         }}
       />
       

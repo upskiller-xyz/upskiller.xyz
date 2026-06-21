@@ -1,167 +1,114 @@
-# Claude Development Log - 00_Websites
+# CLAUDE.md — upskiller.xyz
 
-This file tracks the development history and decisions made with Claude for this repository.
+Agent working instructions for this repo. **These instructions override default behavior — follow them exactly.**
 
-## 🏗️ Project Overview
+For *what* we're building and *why*, read the specs — don't duplicate them here:
 
-- **Repository**: 00_Websites
-- **Purpose**: Multi-website platform for company and tools
-- **Tech Stack**: React, TypeScript, Tailwind CSS, Vite
-- **Structure**: Shared components + individual website projects
+- [specs/mission.md](specs/mission.md) — what the product is and who it serves
+- [specs/tech-stack.md](specs/tech-stack.md) — tech choices, deployment, and the **design system** (colors, typography, spacing, component patterns). This is the source of truth for design tokens.
+- [specs/roadmap.md](specs/roadmap.md) — phased upcoming work
+- `specs/<date>-<feature>/` — per-feature `requirements.md` → `plan.md` → `validation.md`
+
+Design tokens themselves live on `:root` in `upskiller/src/styles/globals.css` and in `shared/fonts/automate.css`. Reference existing tokens — don't introduce new hex values without updating [specs/tech-stack.md](specs/tech-stack.md).
 
 ---
 
-## 📅 Development Timeline
-
-### **Session 1 - Initial Setup & Design (July 14, 2025)**
-
-#### **🚀 Major Accomplishments**
-
-1. **Fixed Blank Page Issue**
-   - Problem: Empty `my-sites/package.json` causing startup failures
-   - Solution: Added complete package.json with React/TypeScript/Vite dependencies
-   - Moved `index.html` from `public/` to root for proper Vite entry point
-
-2. **Implemented Single-Page Scrolling Website**
-   - Analyzed Columbus1919.com for design inspiration
-   - Built modern scrolling sections: Hero, About, Services, Contact
-   - Added Tailwind CSS v4 with custom color scheme and typography
-   - Created responsive navigation with smooth scroll and active section highlighting
-
-3. **Repository Restructuring**
-   - Renamed `my-sites/` to `upskiller/` for better naming
-   - Created `shared/` directory structure for reusable components
-   - Enhanced SharedButton component with variants (primary, secondary, accent)
-   - Removed tool-01 references and cleaned up unused files
-
-4. **Development Environment Optimization**
-   - Added comprehensive `.gitignore` for React/TypeScript projects
-   - Removed build artifacts (`dist/`, compiled `.js` files) from version control
-   - Configured Vite port to 5175 for consistency
-   - Cleaned up duplicate and compiled files
-
-5. **Documentation & Onboarding**
-   - Created comprehensive README.md for new developers
-   - Step-by-step setup instructions from zero to running project
-   - Troubleshooting guide for common issues
-   - Learning resources and contributing guidelines
-   - Project structure showing planned multi-website architecture
-
-#### **🛠️ Technical Decisions**
-
-**Framework Choices:**
-
-- **React 18** for component architecture
-- **TypeScript** for type safety
-- **Vite** for fast development and building
-- **Tailwind CSS v4** for utility-first styling
-
-**Project Structure:**
+## Repo Layout
 
 ```
-00_Websites/
-├── shared/                 # Reusable components across projects
-├── upskiller/             # Main company website
-├── tool-website-01/       # Planned: First tool website
-└── [future-websites]/     # Additional websites
+upskiller.xyz/
+├── shared/        # Cross-project assets: SharedButton/SharedLink/ContactButton, fonts, shared.css, types
+├── upskiller/     # Main company website (React app)
+│   ├── public/
+│   │   ├── dynamic/   # JSON content files (see table below)
+│   │   ├── legal/     # Markdown legal pages (about, privacy, tc)
+│   │   └── images/    # Static images
+│   └── src/
+│       ├── App.tsx                  # Router: /, /about, /privacy, /terms, /research
+│       ├── components/
+│       │   ├── sections/             # Page sections (Hero, Products, Research, Resources, Support, Team)
+│       │   ├── sections-components/   # Section sub-components (info-card, news-card, news-panel, hero, partners, team)
+│       │   ├── pages/                # Route pages (HomePage, AboutPage, PrivacyPage, TermsPage, ResearchPage)
+│       │   ├── shared-components/     # Page-level reusables (Section, SectionTitle, PageHeader, PageFooter)
+│       │   ├── shared-subcomponents/  # Smaller reusable pieces (ContactGrid, HeroTextGroup, TeamDetails, …)
+│       │   ├── document-components/   # Markdown document rendering
+│       │   ├── loading/              # Loading/error states
+│       │   └── svg/                  # SVG icon components
+│       └── styles/globals.css        # Design tokens (:root)
+├── lux/           # LUX product surface (skeleton; see roadmap Phase 3)
+├── Dockerfile     # Multi-stage Docker build
+└── nginx.conf     # Production nginx config
 ```
 
-**Design System:**
+`@shared` path alias resolves to `../shared/`.
 
-- Primary colors: Blue (#0ea5e9)
-- Accent color: Green (#10b981)
-- Typography: Inter (body), Poppins (headings)
-- Consistent spacing using Tailwind utilities
+## Dynamic Content
 
-#### **🔧 Commands for New Team Members**
+Site copy is JSON in `upskiller/public/dynamic/` so non-engineers can edit it without touching React:
+
+| File | Purpose |
+|---|---|
+| `products.json` | Product cards (LUX LIVE for Revit, LUX LIVE for IFC) |
+| `news.json` | News items |
+| `research.json` | Research articles |
+| `resources.json` | Resources cards |
+| `team.json` / `team-story.json` | Team profiles and story narrative |
+| `hero-texts.json` | Hero text variants |
+| `contacts.json` / `social-links.json` / `partners.json` | Contact, social, and partner data |
+
+---
+
+## Development
 
 ```bash
-# Setup
-git clone https://github.com/upskiller-xyz/00_Websites.git
-cd 00_Websites/upskiller
+cd upskiller
 npm install
-
-# Development
-npm run dev          # Start dev server (localhost:5175)
-npm run build        # Build for production
-npm run lint         # Check code quality
-
-# Quality Checks Before Committing
-npm run lint && npm run build
+npm run dev      # dev server on localhost:8080
+npm run build    # tsc + vite build
+npm run lint     # ESLint (--max-warnings 0)
+npm run preview  # preview production build
 ```
 
-#### **📋 Current Status**
-
-- ✅ Upskiller website: Complete single-page design with scrolling sections
-- ✅ Shared components: Basic structure established
-- ✅ Development workflow: Documented and tested
-- ⏳ Tool websites: Planned but not yet implemented
-
-#### **🎯 Next Steps / Future Tasks**
-
-1. Create `tool-website-01/` directory and basic structure
-2. Add more shared components (Layout, Header, Footer)
-3. Implement form validation for contact forms
-4. Add animations and micro-interactions
-5. Set up deployment pipeline (Netlify/Vercel)
-6. Add testing framework (Vitest/Jest)
-
-#### **🚨 Important Notes for Future Sessions**
-
-- Vite dev server runs on port 5175 (configured in vite.config.ts)
-- All imports from shared components use `../../shared/` path structure
-- Build artifacts are gitignored - never commit dist/ or compiled .js files
-- Follow conventional commit format: `feat:`, `fix:`, `docs:`, `chore:`
+- **Before committing**, `npm run lint && npm run build` must pass.
+- Build artifacts are gitignored — never commit `dist/` or compiled `.js` files.
+- Import shared assets via the `@shared` alias.
+- Keep pull requests scoped to a single feature or fix so they stay easy to review.
 
 ---
-
-## 🧠 Memory for Future Sessions
-
-When resuming work on this repository:
-
-1. **Current State**: Single-page Upskiller website is complete and running
-2. **Key Files**:
-   - Main app: `upskiller/src/App.tsx`
-   - Shared components: `shared/components/SharedButton.tsx`
-   - Styles: `upskiller/src/styles/globals.css` (includes Tailwind)
-3. **Architecture**: Ready for multi-website expansion with shared components
-4. **Documentation**: README.md has complete setup guide for new developers
 
 ## Commit Message Conventions
 
 Follow the Conventional Commits specification (https://conventionalcommits.org).
 
-Format: <type>(<optional scope>): <description>
+Format: `<type>(<optional scope>): <description>`
 
 ### Types
 
-- feat: new functionality or visual changes the user can see
-- fix: bug fixes, including visual/layout bugs
-- perf: performance improvements
-- refactor: restructuring without behavior or visual change
-- style: code formatting only (whitespace, semicolons) — NOT visual design
-- docs: documentation only
-- test: adding or correcting tests
-- build: build system or dependencies
-- ci: CI/CD configuration
-- chore: maintenance tasks that don't fit above
+- `feat`: new functionality or visual changes the user can see
+- `fix`: bug fixes, including visual/layout bugs
+- `perf`: performance improvements
+- `refactor`: restructuring without behavior or visual change
+- `style`: code formatting only (whitespace, semicolons) — NOT visual design
+- `docs`: documentation only
+- `test`: adding or correcting tests
+- `build`: build system or dependencies
+- `ci`: CI/CD configuration
+- `chore`: maintenance tasks that don't fit above
 
 ### Scopes for visual/design work
 
-- ui: general visual changes (colors, typography, spacing, components)
-- layout: structural changes (grid, flexbox, page structure, responsiveness)
-- design: broader design system updates (theme, design tokens, brand)
-- a11y: accessibility improvements (contrast, focus states, screen readers)
+- `ui`: general visual changes (colors, typography, spacing, components)
+- `layout`: structural changes (grid, flexbox, page structure, responsiveness)
+- `design`: broader design system updates (theme, design tokens, brand)
+- `a11y`: accessibility improvements (contrast, focus states, screen readers)
 
 Examples:
 
-- feat(ui): add hover animation to product cards
-- feat(layout): switch footer to three-column grid
-- feat(design): introduce dark mode color palette
-- fix(ui): correct button alignment on mobile
-- fix(layout): prevent sidebar overlap at tablet breakpoints
-- fix(a11y): increase contrast ratio on placeholder text
-- refactor(ui): migrate inline styles to CSS modules
+- `feat(ui): add hover animation to product cards`
+- `feat(layout): switch footer to three-column grid`
+- `fix(ui): correct button alignment on mobile`
+- `fix(a11y): increase contrast ratio on placeholder text`
+- `refactor(ui): migrate inline styles to CSS modules`
 
 ### Rules
 
@@ -170,8 +117,4 @@ Examples:
 - No period at the end of the description
 - Keep the first line under 72 characters
 - Add a body after a blank line for complex changes
-- Mark breaking changes with ! after the type or a BREAKING CHANGE footer
-
----
-
-_This file is automatically updated by Claude to maintain project context across sessions._
+- Mark breaking changes with `!` after the type or a `BREAKING CHANGE` footer

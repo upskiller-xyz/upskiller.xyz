@@ -2,13 +2,14 @@
   "compilerOptions": {
     "module": "esnext",
     "target": "esnext",
-    "moduleResolution": "node",
+    "moduleResolution": "bundler",
     "jsx": "react-jsx",
     "esModuleInterop": true,
     "allowSyntheticDefaultImports": true,
     "strict": true,
     "forceConsistentCasingInFileNames": true,
     "skipLibCheck": true,
+    "noEmit": true,
     "baseUrl": ".",
     "paths": {
       "@shared/*": ["../shared/*"]

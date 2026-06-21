@@ -16,15 +16,15 @@ export const SharedImage: React.FC<SharedImageProps> = ({
   const Component = onClick ? 'button' : 'div';
   
   return (
-    // <Component
-    //   onClick={onClick}
-    //   className={onClick ? 'transition-opacity duration-200 hover:opacity-80 cursor-pointer' : ''}
-    // >
+    <Component
+      onClick={onClick}
+      className={onClick ? 'transition-opacity duration-200 hover:opacity-80 cursor-pointer' : ''}
+    >
       <img
         src={src}
         alt={alt}
         className={className}
       />
-    // </Component>
+    </Component>
   );
 };

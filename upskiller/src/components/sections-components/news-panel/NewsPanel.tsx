@@ -50,15 +50,6 @@ export const NewsPanel: React.FC<NewsPanelProps> = ({
     fetchNews();
   }, []);
 
-  const formatDate = (dateString: string) => {
-    const date = new Date(dateString);
-    return date.toLocaleDateString('en-US', {
-      year: 'numeric',
-      month: 'short',
-      day: 'numeric'
-    });
-  };
-
   const finalStyle = { backgroundColor: 'var(--color-secondary)', ...style };
 
   if (loading) {

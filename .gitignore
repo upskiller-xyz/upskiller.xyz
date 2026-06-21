@@ -9,9 +9,7 @@ pnpm-debug.log*
 dist/
 build/
 
-# Compiled JavaScript files (use .tsx instead)
-src/**/*.js
-
+# Compiled JavaScript/TypeScript output (source is .ts/.tsx)
 *.js
 *.mjs
 

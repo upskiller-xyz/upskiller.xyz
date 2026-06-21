@@ -1,16 +1,6 @@
 // shared/components/SharedButton.tsx
 import React from "react";
-
-interface ButtonAppearance {
-  variant?: 'primary' | 'secondary' | 'accent' | 'contact' | 'product';
-  size?: 'sm' | 'md' | 'lg';
-  className?: string;
-}
-
-interface ButtonBehavior {
-  onClick?: () => void;
-  disabled?: boolean;
-}
+import { ButtonAppearance, ButtonBehavior } from "../types/button.types";
 
 export interface SharedButtonProps {
   children: React.ReactNode;

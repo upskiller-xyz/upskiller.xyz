@@ -28,10 +28,12 @@ export const NewsCardContent: React.FC<NewsCardContentProps> = ({
       title={title}
       description={description}
     />
-    
-    <NewsItemList
-      items={newsItems}
-      formatDate={formatDate}
-    />
+
+    <div className="news-card-scroll">
+      <NewsItemList
+        items={newsItems}
+        formatDate={formatDate}
+      />
+    </div>
   </div>
 );

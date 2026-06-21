@@ -3,32 +3,32 @@
     {
       "name": "GitHub",
       "url": "https://github.com/upskiller-xyz",
-      "icon": "https://upskiller-website.s3.fr-par.scw.cloud/upskiller/logo/github-dark.svg"
+      "icon": "github-dark.svg"
     },
     {
       "name": "Email",
-      "url": "mailto:contact@upskiller.xyz",
-      "icon": "https://upskiller-website.s3.fr-par.scw.cloud/upskiller/logo/email-dark.svg"
+      "url": "mailto:info@upskiller.xyz",
+      "icon": "email-dark.svg"
     },
     {
       "name": "Telegram",
       "url": "https://t.me/stasya_srp",
-      "icon": "https://upskiller-website.s3.fr-par.scw.cloud/upskiller/logo/telegram.svg"
+      "icon": "telegram.svg"
     },
     {
       "name": "Substack",
-      "url": "http://upskiller.substack.com/",
-      "icon": "https://upskiller-website.s3.fr-par.scw.cloud/upskiller/logo/substack.png"
+      "url": "http://upskillerxyz.substack.com/",
+      "icon": "substack.png"
     },
     {
-      "name": "LinkedIn", 
+      "name": "LinkedIn",
       "url": "https://www.linkedin.com/company/upskiller-xyz/",
-      "icon": "https://upskiller-website.s3.fr-par.scw.cloud/upskiller/logo/linkedin-dark.svg"
+      "icon": "linkedin-dark.svg"
     },
     {
       "name": "Instagram",
-      "url": "https://www.instagram.com/upskiller.xyz", 
-      "icon": "https://upskiller-website.s3.fr-par.scw.cloud/upskiller/logo/instagram-dark.svg"
+      "url": "https://www.instagram.com/upskiller.xyz",
+      "icon": "instagram-dark.svg"
     }
   ]
 }

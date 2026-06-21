@@ -9,7 +9,7 @@ export const NewsCardHeader: React.FC<NewsCardHeaderProps> = ({
   title,
   description
 }) => (
-  <div className="flex flex-col gap-6">
+  <div className="news-card-header-wrapper flex flex-col gap-6">
     <h3 className="info-card-title font-bold text-dark text-3xl">
       {title}
     </h3>

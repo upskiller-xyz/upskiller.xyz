@@ -1,19 +1,25 @@
 import React from 'react';
-import { SharedImage } from '@shared/components';
-import { SectionId } from '../../constants/enums';
+import { Link, useLocation } from 'react-router-dom';
 import AssetPathManager from '../../utils/AssetPathManager';
+import { ScrollBehavior } from '../../constants/enums';
 
-interface NavigationLogoProps {
-  scrollToSection: (sectionId: string) => void;
-}
+export const NavigationLogo: React.FC = () => {
+  const location = useLocation();
 
-export const NavigationLogo: React.FC<NavigationLogoProps> = ({ scrollToSection }) => {
+  const handleClick = (e: React.MouseEvent<HTMLAnchorElement>) => {
+    if (location.pathname === '/') {
+      e.preventDefault();
+      window.scrollTo({ top: 0, behavior: ScrollBehavior.SMOOTH });
+    }
+  };
+
   return (
-    <SharedImage
-      src={AssetPathManager.getNavigationLogo()}
-      alt="Upskiller"
-      className="h-8 w-auto"
-      onClick={() => scrollToSection(SectionId.HOME)}
-    />
+    <Link to="/" onClick={handleClick}>
+      <img
+        src={AssetPathManager.getNavigationLogo()}
+        alt="Upskiller"
+        className="h-8 w-auto"
+      />
+    </Link>
   );
 };

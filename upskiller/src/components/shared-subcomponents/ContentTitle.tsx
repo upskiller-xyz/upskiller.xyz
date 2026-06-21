@@ -1,25 +1,26 @@
 import React from 'react';
+import { ContentTheme } from '@shared/types';
 
 interface ContentTitleProps {
   title: string;
   level?: 1 | 2 | 3 | 4 | 5 | 6;
   className?: string;
-  theme?: 'light' | 'dark' | 'contact';
+  theme?: ContentTheme;
 }
 
-const ContentTitle: React.FC<ContentTitleProps> = ({ 
-  title, 
-  level = 3, 
+const ContentTitle: React.FC<ContentTitleProps> = ({
+  title,
+  level = 3,
   className = '',
-  theme = 'dark'
+  theme = ContentTheme.Dark
 }) => {
   const Tag = `h${level}` as keyof JSX.IntrinsicElements;
   const baseClasses = 'font-bold';
-  
-  const themeClasses = {
-    light: 'text-light',
-    dark: 'text-dark',
-    contact: 'contact-us-title'
+
+  const themeClasses: Record<ContentTheme, string> = {
+    [ContentTheme.Light]: 'text-light',
+    [ContentTheme.Dark]: 'text-dark',
+    [ContentTheme.Contact]: 'contact-us-title'
   };
   
   const sizeClasses = {

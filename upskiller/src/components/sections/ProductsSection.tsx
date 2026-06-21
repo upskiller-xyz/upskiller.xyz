@@ -3,12 +3,14 @@ import React, { useState, useEffect } from 'react';
 import Section from '../shared-components/Section';
 import SectionHeader from '../shared-components/SectionHeader';
 import ProductGrid from '../sections-components/ProductGrid';
-import { Product } from '@shared/types';
+import { Product, SectionTheme, ContentTheme } from '@shared/types';
 import { fetchJsonWithFallback } from '../../utils/fetchWithFallback';
 import AssetPathManager from '../../utils/AssetPathManager';
+import { useSectionHeader } from '../../hooks/useSectionHeader';
 
 const ProductsSection: React.FC = () => {
   const [products, setProducts] = useState<Product[]>([]);
+  const header = useSectionHeader('products');
 
   useEffect(() => {
     const fetchProducts = async () => {
@@ -28,12 +30,12 @@ const ProductsSection: React.FC = () => {
 
 
   return (
-    <Section id="products" theme="secondary">
-      <SectionHeader 
+    <Section id="products" theme={SectionTheme.Primary}>
+      <SectionHeader
         content={{
-          title: "Products",
-          subtitle: "Some of the tools developed as a solution to the problems we are studying.",
-          theme: 'dark'
+          title: header?.title ?? '',
+          subtitle: header?.subtitle,
+          theme: ContentTheme.Light
         }}
       />
       

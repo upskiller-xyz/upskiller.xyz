@@ -1,7 +1,7 @@
 import React from 'react';
 import { NewsItem } from './NewsItem';
 
-interface NewsItem {
+interface NewsItemData {
   id: number;
   title: string;
   description: string;
@@ -10,7 +10,7 @@ interface NewsItem {
 }
 
 interface NewsItemsListProps {
-  items: NewsItem[];
+  items: NewsItemData[];
 }
 
 export const NewsItemsList: React.FC<NewsItemsListProps> = ({

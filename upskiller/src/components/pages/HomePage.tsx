@@ -1,12 +1,13 @@
 // src/components/pages/HomePage.tsx
 import React from "react";
 import Navigation from "../Navigation";
-import { 
-  HeroSection, 
-  SupportSection, 
-  TeamSection, 
-  ProductsSection, 
-  ResourcesSection 
+import {
+  HeroSection,
+  SupportSection,
+  TeamSection,
+  ProductsSection,
+  ResearchSection,
+  ResourcesSection
 } from "../sections";
 import Footer from "../sections-components/footer/Footer";
 
@@ -19,6 +20,7 @@ const HomePage: React.FC = () => {
         <SupportSection />
         <TeamSection />
         <ProductsSection />
+        <ResearchSection />
         <ResourcesSection />
       </main>
       <Footer />

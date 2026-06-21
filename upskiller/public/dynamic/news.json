@@ -1,5 +1,19 @@
 [
   {
+    "id": 9,
+    "title": "Alejandro and Chris present LUX at the AI in AEC conference in Helsinki",
+    "description": "Christoph Berkmiller and Alejandro Pacheco Diéguez will present our real-time ML work on daylight factor prediction at AI in AEC 2026 in Helsinki, showing how focused ML solutions can deliver real value in AEC today.",
+    "date": "2026-03-19",
+    "url": "https://aiaec2026.exordo.com/programme/presentation/49"
+  },
+  {
+    "id": 10,
+    "title": "upskiller Awarded Vinnova Innovative Startups Grant for AI-Driven Building Performance Predictor",
+    "description": "We have been granted 500,000 SEK through Vinnova's Innovativa Startups 2025 program to develop a Building Performance Predictor that integrates AI-based performance analysis into architectural design workflows, selected from 1,037 submissions.",
+    "date": "2025-10-24",
+    "url": "https://www.vinnova.se/p/byggprestandaprediktor-integration-av-ai-baserad-prestandaanalys-i-arkitektonisk-design/"
+  },
+  {
     "id": 1,
     "title": "Stasja Speaking at the Rhino Dev Meeting in Stockholm",
     "description": "Stasja has been invited to present the developments of Lux, our very first tool for automated daylight analysis.",

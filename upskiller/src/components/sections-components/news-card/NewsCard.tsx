@@ -17,14 +17,12 @@ interface NewsCardProps {
   title?: string;
   description?: string;
   className?: string;
-  style?: React.CSSProperties;
 }
 
 export const NewsCard: React.FC<NewsCardProps> = ({
   title = "News",
   description = "Stay updated with our latest announcements and company developments",
-  className = '',
-  style = {}
+  className = ''
 }) => {
   const [newsItems, setNewsItems] = useState<NewsItem[]>([]);
   const [loading, setLoading] = useState(true);
@@ -37,7 +35,7 @@ export const NewsCard: React.FC<NewsCardProps> = ({
           AssetPathManager.getDynamicData('news.json'),
           '/dynamic/news.json'
         );
-        setNewsItems(data.slice(0, 4));
+        setNewsItems(data);
         setLoading(false);
       } catch (err) {
         const errorMessage = err instanceof Error ? err.message : 'An error occurred';
@@ -64,7 +62,6 @@ export const NewsCard: React.FC<NewsCardProps> = ({
       <LoadingState
         message="Loading news..."
         className={className}
-        style={style}
       />
     );
   }
@@ -74,15 +71,13 @@ export const NewsCard: React.FC<NewsCardProps> = ({
       <ErrorState
         error={error}
         className={className}
-        style={style}
       />
     );
   }
 
   return (
-    <div 
+    <div
       className={`news-card transition-all duration-300 ${className}`}
-      style={style}
     >
       <NewsCardContent
         title={title}

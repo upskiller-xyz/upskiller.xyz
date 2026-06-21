@@ -6,19 +6,17 @@ import { NavigationLinks } from './navigation/NavigationLinks';
 import { NavigationActions } from './navigation/NavigationActions';
 
 const Navigation: React.FC = () => {
-  const [isScrolled, setIsScrolled] = useState(false);
   const [activeSection, setActiveSection] = useState('home');
 
   useEffect(() => {
     const handleScroll = () => {
-      setIsScrolled(window.scrollY > 50);
-      
       // Update active section based on scroll position using Map pattern
       const sectionsMap = new Map([
         [SectionId.HOME, 'home'],
         [SectionId.TEAM, 'team'],
         [SectionId.PRODUCTS, 'products'],
-        [SectionId.RESOURCES, 'resources']
+        [SectionId.RESOURCES, 'resources'],
+        [SectionId.RESEARCH, 'research']
       ]);
       
       const scrollPosition = window.scrollY + 100;
@@ -48,16 +46,15 @@ const Navigation: React.FC = () => {
   };
 
   return (
-    <nav className="fixed top-0 left-0 right-0 z-50 transition-all duration-300">
-      <div className="max-w-6xl mx-auto px-6 py-4">
+    <nav className="fixed top-0 left-0 right-0 z-50 transition-all duration-300 h-12 flex items-center">
+      <div className="nav-container max-w-6xl mx-auto w-full">
         <div className="flex items-center justify-between">
-          <NavigationLogo scrollToSection={scrollToSection} />
-          <NavigationLinks 
-            isScrolled={isScrolled}
+          <NavigationLogo />
+          <NavigationLinks
             activeSection={activeSection}
             scrollToSection={scrollToSection}
           />
-          <NavigationActions scrollToSection={scrollToSection} />
+          <NavigationActions />
         </div>
       </div>
     </nav>

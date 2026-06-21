@@ -2,10 +2,9 @@ import React from 'react';
 
 interface TeamStoryParagraphProps {
   children: React.ReactNode;
-  index?: number;
 }
 
-const TeamStoryParagraph: React.FC<TeamStoryParagraphProps> = ({ children, index }) => {
+const TeamStoryParagraph: React.FC<TeamStoryParagraphProps> = ({ children }) => {
   return (
     <p className="team-paragraph">
       {children}

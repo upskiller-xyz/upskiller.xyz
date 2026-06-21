@@ -1,5 +1,4 @@
 import React, { useState, useEffect } from 'react';
-import ContentTitle from '../shared-subcomponents/ContentTitle';
 import SocialLinkGrid from './SocialLinkGrid';
 import { DataFetchService } from '../../services/DataFetchService';
 import { DataFile } from '../../constants/data-files.enums';

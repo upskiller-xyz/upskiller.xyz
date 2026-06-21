@@ -2,16 +2,19 @@
 import React, { useState, useEffect } from 'react';
 import Section from '../shared-components/Section';
 import SectionHeader from '../shared-components/SectionHeader';
+import Reveal from '../shared-components/Reveal';
 import TeamContentArea from '../sections-components/team/TeamContentArea';
 import TeamTabs from '../sections-components/team/TeamTabs';
-import { TeamMember, TeamTab } from '@shared/types';
+import { TeamMember, TeamTab, SectionTheme, ContentTheme } from '@shared/types';
 import { fetchJsonWithFallback } from '../../utils/fetchWithFallback';
 import AssetPathManager from '../../utils/AssetPathManager';
+import { useSectionHeader } from '../../hooks/useSectionHeader';
 
 const TeamSection: React.FC = () => {
   const [activeTab, setActiveTab] = useState('team');
   const [teamMembers, setTeamMembers] = useState<TeamMember[]>([]);
   const [originalTab, setOriginalTab] = useState('team');
+  const header = useSectionHeader('team');
 
   useEffect(() => {
     const fetchTeamData = async () => {
@@ -52,24 +55,27 @@ const TeamSection: React.FC = () => {
   const currentMember = teamMembers.find(member => member.id === activeTab);
 
   return (
-    <Section id="team" theme="primary">
-      <SectionHeader 
+    <Section id="team" theme={SectionTheme.Secondary}>
+      <SectionHeader
         content={{
-          title: "Team",
-          theme: 'light'
+          title: header?.title ?? '',
+          subtitle: header?.subtitle,
+          theme: ContentTheme.Dark
         }}
       />
 
-      <TeamContentArea 
-        currentMember={currentMember} 
-        onMemberHover={handleMemberHover}
-      />
+      <Reveal>
+        <TeamContentArea
+          currentMember={currentMember}
+          onMemberHover={handleMemberHover}
+        />
 
-      <TeamTabs 
-        tabs={tabs} 
-        activeTab={activeTab} 
-        onTabChange={handleTabChange} 
-      />
+        <TeamTabs
+          tabs={tabs}
+          activeTab={activeTab}
+          onTabChange={handleTabChange}
+        />
+      </Reveal>
     </Section>
   );
 };
