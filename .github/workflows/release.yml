@@ -61,12 +61,22 @@ jobs:
           SCW_DEFAULT_ORGANIZATION_ID: ${{ secrets.SCW_ORGANIZATION_ID }}
           SCW_DEFAULT_REGION: fr-par
         run: |
+          set -euo pipefail
           semver="${GITHUB_REF_NAME#v}"
           # web-nsp = registry namespace (image storage); upskiller-nsp = container namespace (serverless runtime) — distinct Scaleway concepts.
           image="rg.fr-par.scw.cloud/web-nsp/upskiller-web:${semver}"
 
-          namespace_id=$(scw container namespace list name=upskiller-nsp -o json | jq -r '.[0].id')
-          container_id=$(scw container container list name=upskiller-web-container namespace-id="$namespace_id" -o json | jq -r '.[0].id')
+          namespace_id=$(scw container namespace list -o json | jq -r '.[] | select(.name=="upskiller-nsp") | .id')
+          if [[ -z "$namespace_id" ]]; then
+            echo "::error::Scaleway container namespace 'upskiller-nsp' not found in region $SCW_DEFAULT_REGION" >&2
+            exit 1
+          fi
 
-          scw container container update "$container_id" registry-image="$image"
+          container_id=$(scw container container list namespace-id="$namespace_id" -o json | jq -r '.[] | select(.name=="upskiller-web-container") | .id')
+          if [[ -z "$container_id" ]]; then
+            echo "::error::Scaleway container 'upskiller-web-container' not found in namespace upskiller-nsp" >&2
+            exit 1
+          fi
+
+          scw container container update "$container_id" image="$image"
           scw container container deploy "$container_id" --wait
