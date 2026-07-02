@@ -5,8 +5,7 @@ import { InfoCardButton } from '../sections-components/info-card/InfoCardButton'
 import Section from '../shared-components/Section';
 import SectionHeader from '../shared-components/SectionHeader';
 import Reveal from '../shared-components/Reveal';
-import { ResearchArticle } from '../../../../shared/types/research.types';
-import { SectionTheme, ContentTheme } from '@shared/types';
+import { ResearchArticle, SectionTheme, ContentTheme } from '@shared/types';
 import { fetchJsonWithFallback } from '../../utils/fetchWithFallback';
 import AssetPathManager from '../../utils/AssetPathManager';
 import { useSectionHeader } from '../../hooks/useSectionHeader';

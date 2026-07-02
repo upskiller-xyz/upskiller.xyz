@@ -1,5 +1,5 @@
 import React from 'react';
-import { SharedButton } from '../../../../../shared/components/SharedButton';
+import { SharedButton } from '@shared/components';
 
 interface InfoCardButtonProps {
   text: string;
