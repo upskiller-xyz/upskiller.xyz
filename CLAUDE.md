@@ -49,7 +49,7 @@ Site copy is JSON in `upskiller/public/dynamic/` so non-engineers can edit it wi
 
 | File | Purpose |
 |---|---|
-| `products.json` | Product cards (LUX LIVE for Revit, LUX LIVE for IFC) |
+| `products.json` | Product cards (LUX LIVE for Revit, LUX Certify) |
 | `news.json` | News items |
 | `research.json` | Research articles |
 | `resources.json` | Resources cards |
