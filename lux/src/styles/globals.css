@@ -1,0 +1,18 @@
+/* src/styles/globals.css — lux-specific styles */
+@import "tailwindcss";
+@import "../../../shared/fonts/automate.css";
+
+/* Design tokens mirrored from specs/tech-stack.md (source of truth) */
+:root {
+  --color-primary: #180057;
+  --color-primary-light: #4e378a;
+  --color-secondary: #00d67a;
+  --color-secondary-light: #99efca;
+  --color-accent: #00ff66;
+  --color-text-light: #f4fffa;
+  --color-text-dark: #180057;
+}
+
+body {
+  font-family: var(--font-automate);
+}

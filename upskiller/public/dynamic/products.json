@@ -7,7 +7,7 @@
         "alt": "Daylight analysis animation"
       },
       "content": {
-        "name": "LUX Live",
+        "name": "LUX LIVE for Revit",
         "subtitle": "Revit plugin for near-real-time daylight analysis",
         "description": "Fast daylight analysis tool that helps architects and engineers optimize natural lighting early in the design process, avoiding costly late-stage simulations.",
         "features": [
@@ -32,16 +32,14 @@
         "alt": "Coming soon icon"
       },
       "content": {
-        "name": "LUX Certify",
-        "subtitle": "Validated daylight analysis of Revit models with Radiance raytracing",
-        "description": "Specialist-validated daylight simulations powered by Radiance raytracing on Revit models, with automatic BIM geometry handling and visual input quality control.",
+        "name": "LUX LIVE for IFC",
+        "subtitle": "Near-real-time daylight analysis for IFC models",
+        "description": "The same fast daylight feedback for IFC models, bringing early-stage daylight analysis to designs from any BIM authoring tool — no Revit required.",
         "features": [
-          "Validated simulations",
-          "Radiance raytracing",
-          "Automatic BIM geometry handling",
-          "Visual input quality control",
-          "Run by specialists in Revit",
-          "Per-simulation pricing"
+          "Near-real-time calculations",
+          "3D visualization",
+          "Building code compliance",
+          "Works with any IFC-exporting tool"
         ]
       },
       "config": {

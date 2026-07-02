@@ -17,12 +17,6 @@ Completed milestones (homepage, dynamic JSON content, legal pages, team and part
 - `/research#<slug>` deep links from homepage `ResearchSection` scroll/highlight the correct card
 - Remove dead `ResearchCard` component and CSS, or wire it in
 
-## Phase 3 — npm workspaces + `/lux` project skeleton
-- Root `package.json` with `workspaces: ["upskiller", "lux"]`
-- Hoist React, Vite, Tailwind, TypeScript to the root `node_modules/`
-- `/lux` project boots with a placeholder landing page
-- Both `npm run dev -w upskiller` and `npm run dev -w lux` work end-to-end
-
 ## Phase 4 — Shared component extraction
 - Move `SharedButton`, `SharedImage`, `SharedLink`, `ContactButton` consumers to import from `@shared`
 - Promote `Section`, `SectionTitle`, `PageHeader`, `PageFooter` into `shared/components` where reuse is proven

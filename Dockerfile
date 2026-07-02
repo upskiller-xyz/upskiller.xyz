@@ -1,34 +1,28 @@
-# Multi-stage build for React Vite application
+# Multi-stage build for React Vite application (npm workspaces monorepo)
 FROM node:18-alpine AS builder
 
-# Set working directory
-WORKDIR /
+WORKDIR /app
 
-# Copy package files
-COPY upskiller/package*.json ./upskiller/
-COPY package*.json ./
-
-# Install dependencies
-WORKDIR /upskiller
+# Install dependencies from the root workspace lockfile.
+# npm ci needs every workspace's package.json present, even though
+# this image only builds and ships the upskiller site.
+COPY package.json package-lock.json ./
+COPY upskiller/package.json ./upskiller/
+COPY lux/package.json ./lux/
 RUN npm ci
 
 # Copy source code
-COPY upskiller/ ./upskiller/
 COPY shared/ ./shared/
-COPY upskiller/tsconfig.json ./upskiller/tsconfig.json
-COPY upskiller/vite.config.ts ./upskiller/vite.config.ts
+COPY upskiller/ ./upskiller/
 
-WORKDIR /upskiller/upskiller
-RUN ls -l 
-
-# Build the application
-RUN npm run build
+# Build the main website
+RUN npm run build -w upskiller
 
 # Production stage with Nginx
 FROM nginx:alpine
 
 # Copy built assets from builder stage
-COPY --from=builder /upskiller/upskiller/dist /usr/share/nginx/html
+COPY --from=builder /app/upskiller/dist /usr/share/nginx/html
 
 # Copy custom nginx configuration
 COPY nginx.conf /etc/nginx/conf.d/default.conf
