@@ -22,10 +22,11 @@ Completed milestones (homepage, dynamic JSON content, legal pages, team and part
 - Promote `Section`, `SectionTitle`, `PageHeader`, `PageFooter` into `shared/components` where reuse is proven
 - Document the `@shared` boundary in `CLAUDE.md`
 
-## Phase 5 — LUX LIVE for IFC landing + waitlist
-- `/lux` landing page with product overview
+## Phase 5 — `/lux` landing page + LUX web for IFC link
+- `/lux` landing page with the LUX LIVE (Revit) product overview, building out the Phase 3 placeholder
 - Email capture form (backend TBD; likely a third-party form service)
-- Distinct visual for LUX LIVE for IFC (replace the duplicated Revit `daylight.gif`)
+- LUX LIVE for IFC is a separate self-contained website (not a product card — the second card stays LUX Certify); when it goes live, set `linkUrl` on the "LUX web for IFC" card in `research.json`
+- Distinct visual for the LUX Certify card (replace the duplicated Revit `daylight.gif`)
 
 ## Phase 6 — News detail pages
 - `/news/:slug` route rendering a single news item
