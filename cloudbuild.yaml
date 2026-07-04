@@ -48,6 +48,10 @@ steps:
       - "${_SERVICE}"
       - "--image=${_REGION}-docker.pkg.dev/$PROJECT_ID/${_REPOSITORY}/${_SERVICE}:$TAG_NAME"
       - "--region=${_REGION}"
+      # nginx speaks HTTP/1.1 only; with HTTP/2 enabled Cloud Run sends h2c to the
+      # container and nginx 502s every request. Pin it off so a deploy can't
+      # re-enable it. See the h2c mismatch we hit on the first Cloud Run rollout.
+      - "--no-use-http2"
       - "--quiet"
 
 options:
