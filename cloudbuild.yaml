@@ -1,0 +1,51 @@
+# Cloud Build config for deploying upskiller.xyz to Cloud Run.
+# Runs from a Cloud Build trigger connected directly to this GitHub repo
+# (not a GitHub Actions workflow), firing on new tag pushes matching v*.
+# Runs alongside the existing Scaleway release (.github/workflows/release.yml) — does not replace it.
+#
+# Real values never live in this file. Two ways they get in:
+#   - `build.sh` runs: sourced from the repo-root .env (see .env.example)
+#   - trigger-based runs (GitHub push): set as substitution overrides on the
+#     Cloud Build trigger itself (gcloud builds triggers create --substitutions=...)
+substitutions:
+  _REGION: xxx
+  _SERVICE: xxx
+  _REPOSITORY: xxx
+  _ASSET_BASE_URL: xxx
+
+images:
+  - "${_REGION}-docker.pkg.dev/$PROJECT_ID/${_REPOSITORY}/${_SERVICE}:$TAG_NAME"
+
+steps:
+  - name: gcr.io/cloud-builders/docker
+    id: build
+    args:
+      - build
+      - "--build-arg"
+      - "VITE_ASSET_BASE_URL=${_ASSET_BASE_URL}"
+      - "-t"
+      - "${_REGION}-docker.pkg.dev/$PROJECT_ID/${_REPOSITORY}/${_SERVICE}:$TAG_NAME"
+      - "-t"
+      - "${_REGION}-docker.pkg.dev/$PROJECT_ID/${_REPOSITORY}/${_SERVICE}:latest"
+      - .
+
+  - name: gcr.io/cloud-builders/docker
+    id: push
+    args:
+      - push
+      - "--all-tags"
+      - "${_REGION}-docker.pkg.dev/$PROJECT_ID/${_REPOSITORY}/${_SERVICE}"
+
+  - name: gcr.io/cloud-builders/gcloud
+    id: deploy
+    entrypoint: gcloud
+    args:
+      - run
+      - deploy
+      - "${_SERVICE}"
+      - "--image=${_REGION}-docker.pkg.dev/$PROJECT_ID/${_REPOSITORY}/${_SERVICE}:$TAG_NAME"
+      - "--region=${_REGION}"
+      - "--quiet"
+
+options:
+  logging: CLOUD_LOGGING_ONLY

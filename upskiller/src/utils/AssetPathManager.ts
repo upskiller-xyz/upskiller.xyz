@@ -2,7 +2,8 @@
  * Centralized asset path management for Upskiller website
  */
 export class AssetPathManager {
-  private static readonly BUCKET_BASE_URL = 'https://upskiller-website.s3.fr-par.scw.cloud/upskiller';
+  private static readonly BUCKET_BASE_URL =
+    import.meta.env.VITE_ASSET_BASE_URL || 'https://upskiller-website.s3.fr-par.scw.cloud/upskiller';
   
   // Static asset categories
   static readonly CATEGORIES = {
