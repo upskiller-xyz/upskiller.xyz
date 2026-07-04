@@ -22,7 +22,6 @@ COPY upskiller/tsconfig.json ./upskiller/tsconfig.json
 COPY upskiller/vite.config.ts ./upskiller/vite.config.ts
 
 WORKDIR /upskiller/upskiller
-RUN ls -l
 
 # Asset base URL baked into the JS bundle at build time (Vite only exposes
 # VITE_-prefixed vars). Real working default (not a secret, just a public bucket

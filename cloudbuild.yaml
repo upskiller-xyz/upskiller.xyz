@@ -11,7 +11,10 @@ substitutions:
   _REGION: xxx
   _SERVICE: xxx
   _REPOSITORY: xxx
-  _ASSET_BASE_URL: xxx
+  # Left empty on purpose: an empty --build-arg is falsy in AssetPathManager's
+  # `import.meta.env.VITE_ASSET_BASE_URL || fallback`, so it falls back to the
+  # Scaleway URL instead of baking in the literal string "xxx".
+  _ASSET_BASE_URL: ""
 
 images:
   - "${_REGION}-docker.pkg.dev/$PROJECT_ID/${_REPOSITORY}/${_SERVICE}:$TAG_NAME"
