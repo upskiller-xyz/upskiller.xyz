@@ -115,10 +115,12 @@ Defined on `:root` and consumed via `var(--color-*)`:
 
 ## Tooling
 
-- `npm run dev` — Vite dev server on port 8080
-- `npm run build` — `tsc && vite build`
+npm workspaces monorepo (`workspaces: ["upskiller", "lux"]`): install from the repo root, single hoisted `node_modules/` and root `package-lock.json`. Target a workspace with `-w`, e.g. `npm run dev -w upskiller`.
+
+- `npm run dev -w upskiller` — Vite dev server on port 8080 (`-w lux` → port 8081)
+- `npm run build` — `tsc && vite build` for all workspaces (or one via `-w`)
 - `npm run lint` — ESLint with `@typescript-eslint`, `react-hooks`, `react-refresh` plugins; `--max-warnings 0`
-- `npm run preview` — preview production build locally
+- `npm run preview -w upskiller` — preview production build locally
 
 ## What We Are Not Using
 
