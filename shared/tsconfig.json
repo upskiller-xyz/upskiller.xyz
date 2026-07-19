@@ -12,10 +12,10 @@
     "declaration": true,
     "declarationMap": true,
     "baseUrl": ".",
-    "typeRoots": ["../upskiller/node_modules/@types"],
+    "typeRoots": ["../node_modules/@types"],
     "paths": {
-      "react": ["../upskiller/node_modules/@types/react"],
-      "react/*": ["../upskiller/node_modules/@types/react/*"]
+      "react": ["../node_modules/@types/react"],
+      "react/*": ["../node_modules/@types/react/*"]
     }
   },
   "include": ["**/*"],

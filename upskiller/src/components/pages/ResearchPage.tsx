@@ -3,7 +3,7 @@ import Navigation from '../Navigation';
 import PageFooter from '../shared-components/PageFooter';
 import { InfoCard } from '../sections-components/info-card/InfoCard';
 import { SharedButton } from '@shared/components';
-import { ResearchArticle, ResearchData } from '../../../../shared/types/research.types';
+import { ResearchArticle, ResearchData } from '@shared/types';
 import { fetchJsonWithFallback } from '../../utils/fetchWithFallback';
 import AssetPathManager from '../../utils/AssetPathManager';
 

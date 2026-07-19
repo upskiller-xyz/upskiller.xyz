@@ -106,14 +106,14 @@ Follow these steps to set up the project locally for development.
    cd upskiller.xyz
    ```
 
-2. **Navigate to the website directory**
-   ```sh
-   cd upskiller
-   ```
-
-3. **Install dependencies**
+2. **Install dependencies** (npm workspaces — always install from the repo root)
    ```sh
    npm install
+   ```
+
+3. **Navigate to the website directory** (for the asset setup below)
+   ```sh
+   cd upskiller
    ```
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>

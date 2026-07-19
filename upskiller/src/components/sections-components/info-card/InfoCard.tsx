@@ -1,6 +1,5 @@
 import React from 'react';
-import { ProductContent } from '../../../../../shared/types/product.types';
-import { ButtonBase } from '../../../../../shared/types/button.types';
+import { ProductContent, ButtonBase } from '@shared/types';
 import { InfoCardTitle } from './InfoCardTitle';
 import { InfoCardSubtitle } from './InfoCardSubtitle';
 import { InfoCardTitleText } from './InfoCardTitleText';

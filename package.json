@@ -1,0 +1,14 @@
+{
+  "name": "upskiller.xyz",
+  "private": true,
+  "version": "0.1.0",
+  "workspaces": [
+    "upskiller",
+    "lux"
+  ],
+  "scripts": {
+    "dev": "npm run dev -w upskiller",
+    "build": "npm run build --workspaces",
+    "lint": "npm run lint --workspaces"
+  }
+}

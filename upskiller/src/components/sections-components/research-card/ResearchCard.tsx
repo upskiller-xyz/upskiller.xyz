@@ -1,5 +1,5 @@
 import React from 'react';
-import { ResearchArticle } from '../../../../../shared/types/research.types';
+import { ResearchArticle } from '@shared/types';
 import { ResearchCardImage } from './ResearchCardImage';
 import { ResearchCardMeta } from './ResearchCardMeta';
 

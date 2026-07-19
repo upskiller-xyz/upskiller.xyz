@@ -1,0 +1,29 @@
+/* src/styles/globals.css — lux-specific styles */
+@import "tailwindcss";
+@import "../../../shared/fonts/automate.css";
+@import "../../../shared/styles/buttons.css";
+
+/* Design tokens mirrored from specs/tech-stack.md (source of truth) */
+:root {
+  --color-primary: #180057;
+  --color-primary-light: #4e378a;
+  --color-secondary: #00d67a;
+  --color-secondary-light: #99efca;
+  --color-accent: #00ff66;
+  --color-text-light: #f4fffa;
+  --color-text-dark: #180057;
+}
+
+body {
+  font-family: var(--font-automate);
+}
+
+/* Mirrors .info-card-button-wrapper: accent background + lift-and-shift hover */
+.btn-product-wrapper {
+  background-color: var(--color-accent);
+  transition: transform 0.3s ease;
+}
+
+.btn-product-wrapper:hover {
+  transform: translate(15px, -15px);
+}

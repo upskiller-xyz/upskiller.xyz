@@ -35,12 +35,20 @@ upskiller.xyz/
 │       │   ├── loading/              # Loading/error states
 │       │   └── svg/                  # SVG icon components
 │       └── styles/globals.css        # Design tokens (:root)
-├── lux/           # LUX product surface (skeleton; see roadmap Phase 3)
+├── lux/           # LUX product surface (placeholder page; see roadmap Phase 5)
+├── package.json   # npm workspaces root: ["upskiller", "lux"] — single hoisted node_modules/ + lockfile
 ├── Dockerfile     # Multi-stage Docker build
 └── nginx.conf     # Production nginx config
 ```
 
-`@shared` path alias resolves to `../shared/`.
+### The `@shared` boundary
+
+`shared/` holds code used by more than one workspace: components (`SharedButton`, `SharedImage`, `SharedLink`, `ContactButton`, `TeamMemberDetails`), `types/`, `fonts/`, and `styles/` (`buttons.css` for SharedButton variants, `shared.css`).
+
+- Import via the `@shared` alias (resolves to `../shared/`), preferring the barrels `@shared/components` and `@shared/types` — never deep relative paths like `../../../../../shared/…`.
+- `shared/` must not import from `upskiller/` or `lux/`.
+- Promote a component into `shared/` only when a second workspace actually needs it (reuse proven) — until then it stays in its app. `Section`, `SectionTitle`, `PageHeader`, `PageFooter` remain in `upskiller/src/components/shared-components/` for this reason.
+- CSS that a shared component depends on lives next to it in `shared/styles/` and is `@import`ed by each app's `globals.css`.
 
 ## Dynamic Content
 
@@ -48,7 +56,7 @@ Site copy is JSON in `upskiller/public/dynamic/` so non-engineers can edit it wi
 
 | File | Purpose |
 |---|---|
-| `products.json` | Product cards (LUX LIVE for Revit, LUX LIVE for IFC) |
+| `products.json` | Product cards (LUX LIVE for Revit, LUX Certify) |
 | `news.json` | News items |
 | `research.json` | Research articles |
 | `resources.json` | Resources cards |
@@ -60,16 +68,20 @@ Site copy is JSON in `upskiller/public/dynamic/` so non-engineers can edit it wi
 
 ## Development
 
+This is an npm workspaces monorepo — always `npm install` from the repo root (single root `node_modules/` and `package-lock.json`; never create per-workspace lockfiles).
+
 ```bash
-cd upskiller
-npm install
-npm run dev      # dev server on localhost:8080
-npm run build    # tsc + vite build
-npm run lint     # ESLint (--max-warnings 0)
-npm run preview  # preview production build
+npm install               # from repo root — installs all workspaces
+npm run dev -w upskiller  # dev server on localhost:8080
+npm run dev -w lux        # dev server on localhost:8081
+npm run build             # build all workspaces (tsc + vite build)
+npm run lint              # lint all workspaces (ESLint, --max-warnings 0)
+npm run preview -w upskiller  # preview production build
 ```
 
-- **Before committing**, `npm run lint && npm run build` must pass.
+Use `-w upskiller` / `-w lux` to target a single workspace for `build` and `lint` too.
+
+- **Before committing**, `npm run lint && npm run build` (from the root) must pass.
 - Build artifacts are gitignored — never commit `dist/` or compiled `.js` files.
 - Import shared assets via the `@shared` alias.
 - Keep pull requests scoped to a single feature or fix so they stay easy to review.

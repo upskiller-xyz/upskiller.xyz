@@ -17,21 +17,11 @@ Completed milestones (homepage, dynamic JSON content, legal pages, team and part
 - `/research#<slug>` deep links from homepage `ResearchSection` scroll/highlight the correct card
 - Remove dead `ResearchCard` component and CSS, or wire it in
 
-## Phase 3 — npm workspaces + `/lux` project skeleton
-- Root `package.json` with `workspaces: ["upskiller", "lux"]`
-- Hoist React, Vite, Tailwind, TypeScript to the root `node_modules/`
-- `/lux` project boots with a placeholder landing page
-- Both `npm run dev -w upskiller` and `npm run dev -w lux` work end-to-end
-
-## Phase 4 — Shared component extraction
-- Move `SharedButton`, `SharedImage`, `SharedLink`, `ContactButton` consumers to import from `@shared`
-- Promote `Section`, `SectionTitle`, `PageHeader`, `PageFooter` into `shared/components` where reuse is proven
-- Document the `@shared` boundary in `CLAUDE.md`
-
-## Phase 5 — LUX LIVE for IFC landing + waitlist
-- `/lux` landing page with product overview
+## Phase 5 — `/lux` landing page + LUX web for IFC link
+- `/lux` landing page with the LUX LIVE (Revit) product overview, building out the Phase 3 placeholder
 - Email capture form (backend TBD; likely a third-party form service)
-- Distinct visual for LUX LIVE for IFC (replace the duplicated Revit `daylight.gif`)
+- LUX LIVE for IFC is a separate self-contained website (not a product card — the second card stays LUX Certify); when it goes live, set `linkUrl` on the "LUX web for IFC" card in `research.json`
+- Distinct visual for the LUX Certify card (replace the duplicated Revit `daylight.gif`)
 
 ## Phase 6 — News detail pages
 - `/news/:slug` route rendering a single news item
