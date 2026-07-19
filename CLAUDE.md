@@ -7,7 +7,6 @@ For *what* we're building and *why*, read the specs — don't duplicate them her
 - [specs/mission.md](specs/mission.md) — what the product is and who it serves
 - [specs/tech-stack.md](specs/tech-stack.md) — tech choices, deployment, and the **design system** (colors, typography, spacing, component patterns). This is the source of truth for design tokens.
 - [specs/roadmap.md](specs/roadmap.md) — phased upcoming work
-- `specs/<date>-<feature>/` — per-feature `requirements.md` → `plan.md` → `validation.md`
 
 Design tokens themselves live on `:root` in `upskiller/src/styles/globals.css` and in `shared/fonts/automate.css`. Reference existing tokens — don't introduce new hex values without updating [specs/tech-stack.md](specs/tech-stack.md).
 
@@ -35,7 +34,7 @@ upskiller.xyz/
 │       │   ├── loading/              # Loading/error states
 │       │   └── svg/                  # SVG icon components
 │       └── styles/globals.css        # Design tokens (:root)
-├── lux/           # LUX product surface (skeleton; see roadmap Phase 3)
+├── lux/           # LUX product surface (skeleton; see roadmap Phase 2)
 ├── Dockerfile     # Multi-stage Docker build
 └── nginx.conf     # Production nginx config
 ```

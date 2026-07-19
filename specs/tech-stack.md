@@ -18,7 +18,7 @@ upskiller.xyz is a client-rendered React application served as static files behi
 
 - `shared/` — cross-project components, fonts, styles, and TypeScript types
 - `upskiller/` — the marketing site (this app)
-- `lux/` — the LUX product surface (skeleton; see roadmap Phase 3)
+- `lux/` — the LUX product surface (skeleton; see roadmap Phase 2)
 - `@shared` path alias resolves to `../shared/` via `vite-tsconfig-paths`
 
 ### Multi-Site Architecture (decided in [#23](https://github.com/upskiller-xyz/upskiller.xyz/issues/23))
