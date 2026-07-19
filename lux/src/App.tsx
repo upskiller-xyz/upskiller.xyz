@@ -1,4 +1,4 @@
-import { SharedButton } from "@shared/components/SharedButton";
+import { SharedButton } from "@shared/components";
 
 const SIGNUP_FORM_URL =
   "https://docs.google.com/forms/d/19p6IUGgH7YBV7W9smQDx1ISpL2WiRiKaHgJDGndTj1M/viewform";

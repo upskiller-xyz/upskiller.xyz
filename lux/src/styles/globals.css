@@ -1,6 +1,7 @@
 /* src/styles/globals.css — lux-specific styles */
 @import "tailwindcss";
 @import "../../../shared/fonts/automate.css";
+@import "../../../shared/styles/buttons.css";
 
 /* Design tokens mirrored from specs/tech-stack.md (source of truth) */
 :root {
@@ -15,53 +16,6 @@
 
 body {
   font-family: var(--font-automate);
-}
-
-/* Button styles copied from upskiller/src/styles/globals.css so SharedButton
-   renders identically here; extract to shared/ in roadmap Phase 4 */
-@layer components {
-  .btn-base {
-    font-weight: 500;
-    transition: all 0.2s;
-    outline: none;
-  }
-
-  .btn-base:focus {
-    ring: 2px;
-    ring-offset: 2px;
-  }
-
-  .btn-product {
-    font-weight: 500;
-    transition: all 0.2s;
-    outline: none;
-    cursor: pointer;
-    color: #180057;
-    font-size: 1rem;
-    width: 100%;
-  }
-
-  .btn-product:hover {
-    opacity: 0.9;
-  }
-
-  .btn-product:focus {
-    ring: 2px;
-    ring-offset: 2px;
-  }
-
-  .btn-md {
-    padding: 0.75rem 1.5rem;
-    font-size: 1rem;
-  }
-
-  .btn-disabled {
-    cursor: default;
-  }
-
-  .btn-enabled {
-    cursor: pointer;
-  }
 }
 
 /* Mirrors .info-card-button-wrapper: accent background + lift-and-shift hover */

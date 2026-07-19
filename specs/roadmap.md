@@ -17,11 +17,6 @@ Completed milestones (homepage, dynamic JSON content, legal pages, team and part
 - `/research#<slug>` deep links from homepage `ResearchSection` scroll/highlight the correct card
 - Remove dead `ResearchCard` component and CSS, or wire it in
 
-## Phase 4 — Shared component extraction
-- Move `SharedButton`, `SharedImage`, `SharedLink`, `ContactButton` consumers to import from `@shared`
-- Promote `Section`, `SectionTitle`, `PageHeader`, `PageFooter` into `shared/components` where reuse is proven
-- Document the `@shared` boundary in `CLAUDE.md`
-
 ## Phase 5 — `/lux` landing page + LUX web for IFC link
 - `/lux` landing page with the LUX LIVE (Revit) product overview, building out the Phase 3 placeholder
 - Email capture form (backend TBD; likely a third-party form service)

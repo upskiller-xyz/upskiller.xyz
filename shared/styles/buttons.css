@@ -1,0 +1,65 @@
+/* shared/styles/buttons.css — SharedButton variant/size/state classes.
+   Consumed by every workspace that renders SharedButton. */
+
+@layer components {
+  .btn-base {
+    font-weight: 500;
+    transition: all 0.2s;
+    outline: none;
+  }
+
+  .btn-base:focus {
+    ring: 2px;
+    ring-offset: 2px;
+  }
+
+  .btn-contact {
+    color: #180057;
+  }
+
+  .btn-contact:hover {
+    opacity: 0.9;
+  }
+
+  .btn-product {
+    font-weight: 500;
+    transition: all 0.2s;
+    outline: none;
+    cursor: pointer;
+    color: #180057;
+    font-size: 1rem;
+    width: 100%;
+  }
+
+  .btn-product:hover {
+    opacity: 0.9;
+  }
+
+  .btn-product:focus {
+    ring: 2px;
+    ring-offset: 2px;
+  }
+
+  .btn-sm {
+    padding: 0.5rem 1rem;
+    font-size: 0.875rem;
+  }
+
+  .btn-md {
+    padding: 0.75rem 1.5rem;
+    font-size: 1rem;
+  }
+
+  .btn-lg {
+    padding: 1rem 2rem;
+    font-size: 1.125rem;
+  }
+
+  .btn-disabled {
+    cursor: default;
+  }
+
+  .btn-enabled {
+    cursor: pointer;
+  }
+}

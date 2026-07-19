@@ -41,7 +41,14 @@ upskiller.xyz/
 └── nginx.conf     # Production nginx config
 ```
 
-`@shared` path alias resolves to `../shared/`.
+### The `@shared` boundary
+
+`shared/` holds code used by more than one workspace: components (`SharedButton`, `SharedImage`, `SharedLink`, `ContactButton`, `TeamMemberDetails`), `types/`, `fonts/`, and `styles/` (`buttons.css` for SharedButton variants, `shared.css`).
+
+- Import via the `@shared` alias (resolves to `../shared/`), preferring the barrels `@shared/components` and `@shared/types` — never deep relative paths like `../../../../../shared/…`.
+- `shared/` must not import from `upskiller/` or `lux/`.
+- Promote a component into `shared/` only when a second workspace actually needs it (reuse proven) — until then it stays in its app. `Section`, `SectionTitle`, `PageHeader`, `PageFooter` remain in `upskiller/src/components/shared-components/` for this reason.
+- CSS that a shared component depends on lives next to it in `shared/styles/` and is `@import`ed by each app's `globals.css`.
 
 ## Dynamic Content
 
