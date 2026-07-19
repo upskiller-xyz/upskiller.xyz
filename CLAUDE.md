@@ -4,7 +4,7 @@ Agent working instructions for this repo. **These instructions override default 
 
 For *what* we're building and *why*, read the specs — don't duplicate them here:
 
-- [specs/mission.md](specs/mission.md) — what the product is and who it serves
+- [specs/mission.md](specs/mission.md) — what the company and its sites are for, and who each site serves
 - [specs/tech-stack.md](specs/tech-stack.md) — tech choices, deployment, and the **design system** (colors, typography, spacing, component patterns). This is the source of truth for design tokens.
 - [specs/roadmap.md](specs/roadmap.md) — phased upcoming work
 

@@ -1,28 +1,32 @@
 # Mission
 
-upskiller.xyz is the public home of Upskiller — a small team building daylight-analysis tools for architects, engineers, and building-simulation professionals. The site exists so that the people who design better buildings can find our software, read our research, and meet the humans behind it.
+Upskiller is a small company building daylight-analysis software for the people who design buildings. Our web presence is split in two: one site that represents the company, and one site per product. This monorepo hosts all of them.
 
-We believe daylight is a measurable design input, not a happy accident. Our job is to put the measurement within reach.
+## upskiller.xyz — the company site
 
-## What We Do
+upskiller.xyz represents Upskiller the company. It has already earned its keep — we used it to apply for grants and to meet with VCs — and its job hasn't changed: present the team, and display what we produce — research, articles, products.
 
-The site presents three things: the products we ship, the research that informs them, and the team that builds them. Content is driven by a small set of JSON files so that non-engineers can update the site without touching React. A separate `/lux` product surface will live in the same monorepo.
+### Who it serves
 
-## Who We Serve
+- **Investors** — VCs and grant reviewers who need to understand who we are and what we have built before a meeting.
+- **Due-diligence visitors** — people looking for proof that Upskiller is an established legal entity before funding, hiring, or partnering with us.
+- **Job seekers** — people considering working with us who want to meet the team before emailing.
 
-- **Architects and engineers** — practitioners evaluating whether LUX LIVE fits into their Revit or IFC workflow.
-- **Sustainability and performance consultants** — specialists who care about LEED, WELL, and EN 17037 daylight credits and want to see the methodology behind our numbers.
-- **Researchers and students** — curious readers of the Substack, following our work on real-time daylight simulation.
-- **Prospective teammates and partners** — people who want to know who we are before emailing us.
+### What it is not
 
-## Target Audience
+It is not a product pitch. Product depth lives on the product sites.
 
-- **First-time visitors arriving from a product demo or conference talk** — the homepage has to establish credibility inside ten seconds, with a clear "what is this and who is it for" above the fold.
-- **Returning readers checking for new research** — the Research section must feel current, not like a dusty brochure.
-- **Prospects comparing LUX LIVE for Revit against alternatives** — the product page has to answer the "is this serious?" question without a sales call.
+## Product sites — LUX and those that follow
 
-## What Success Looks Like
+Each product we create gets its own website, and that website is all about the product: what it does, who it is for, how to get it. The first is LUX.
 
-A site that makes the next conversation easier. A prospect lands, reads two paragraphs, opens the Substack, books a demo — without needing to ask us what the product does. Research feels alive. The team page reads like humans wrote it.
+### Who they serve
 
-Also: fast, accessible, and maintainable by one person on a Friday afternoon.
+- **Architects and specialists** — practitioners evaluating whether the product fits their workflow.
+- **Potential buyers** — CTOs and Heads of Digital Transformation deciding whether their organization adopts it.
+
+## What success looks like
+
+An investor leaves upskiller.xyz convinced the team is real and productive. A due-diligence check finds what it needs without emailing us. A practitioner lands on a product site and understands the product without wading through company story.
+
+When a piece of content doesn't know which site it belongs on, the split decides: company story on upskiller.xyz, product story on the product site.

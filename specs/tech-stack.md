@@ -32,6 +32,8 @@ Two tiers of "shared":
 
 Promotion path: feature → site `components/` → root `shared/`.
 
+**Component sharing across sites**: the company site and the product sites must draw from one shared component vocabulary rather than duplicating primitives per site. Whether that vocabulary is built on a component library (daisyUI and shadcn/ui are the candidates) or stays hand-rolled in `shared/` is an open decision — record the outcome here once made.
+
 **Cross-site features** (e.g. news, contact, footer): promote the reusable *pieces* to `shared/` and let each site compose its own thin feature from them — features stay app-local with zero cross-site coupling. Only escalate a feature to a shared package once it is demonstrably identical across ≥2 sites. Pairs with the npm-workspaces setup ([#32](https://github.com/upskiller-xyz/upskiller.xyz/issues/32)).
 
 ## Deployment
