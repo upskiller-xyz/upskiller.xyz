@@ -18,7 +18,7 @@ upskiller.xyz is a client-rendered React application served as static files behi
 
 - `shared/` — cross-project components, fonts, styles, and TypeScript types
 - `upskiller/` — the marketing site (this app)
-- `lux/` — the LUX product surface (skeleton; see roadmap Phase 3)
+- `lux/` — the LUX product surface (skeleton; see roadmap Phase 2)
 - `@shared` path alias resolves to `../shared/` via `vite-tsconfig-paths`
 
 ### Multi-Site Architecture (decided in [#23](https://github.com/upskiller-xyz/upskiller.xyz/issues/23))
@@ -31,6 +31,8 @@ Two tiers of "shared":
 2. Each site's `src/components/` — pieces reused within that one site.
 
 Promotion path: feature → site `components/` → root `shared/`.
+
+**Component sharing across sites**: the company site and the product sites must draw from one shared component vocabulary rather than duplicating primitives per site. Whether that vocabulary is built on a component library (daisyUI and shadcn/ui are the candidates) or stays hand-rolled in `shared/` is an open decision — record the outcome here once made.
 
 **Cross-site features** (e.g. news, contact, footer): promote the reusable *pieces* to `shared/` and let each site compose its own thin feature from them — features stay app-local with zero cross-site coupling. Only escalate a feature to a shared package once it is demonstrably identical across ≥2 sites. Pairs with the npm-workspaces setup ([#32](https://github.com/upskiller-xyz/upskiller.xyz/issues/32)).
 
