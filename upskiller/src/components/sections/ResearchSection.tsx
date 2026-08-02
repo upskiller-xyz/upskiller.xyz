@@ -47,13 +47,13 @@ const ResearchSection: React.FC = () => {
   };
 
   return (
-    <Section id="research" theme={SectionTheme.Secondary}>
+    <Section id="research" theme={SectionTheme.Primary}>
       <div className="section-content">
         <SectionHeader
           content={{
             title: header?.title ?? '',
             subtitle: header?.subtitle,
-            theme: ContentTheme.Dark
+            theme: ContentTheme.Light
           }}
         />
 

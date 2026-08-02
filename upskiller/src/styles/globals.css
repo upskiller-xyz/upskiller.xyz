@@ -836,6 +836,12 @@ h1, h2, h3, h4, h5, h6 {
   }
 }
 
+/* Logos carry their own transparent margins, so the section needs less
+   breathing room around them than the default section header spacing. */
+#support .section-header {
+  margin-bottom: 1.5rem;
+}
+
 .support-partners {
   background-color: var(--color-secondary);
   padding: 0.6rem;
@@ -856,7 +862,7 @@ h1, h2, h3, h4, h5, h6 {
   .support-partners-grid {
     grid-template-columns: repeat(3, 1fr);
     gap: 2.5rem;
-    padding: 1.5rem;
+    padding: 0.75rem 1.5rem;
   }
 }
 
@@ -865,7 +871,7 @@ h1, h2, h3, h4, h5, h6 {
   .support-partners-grid {
     grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
     gap: 3rem;
-    padding: 2rem;
+    padding: 0.75rem 2rem;
     justify-items: center;
   }
 }
