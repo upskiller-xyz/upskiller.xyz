@@ -1,0 +1,7 @@
+# Security contact for Upskiller (BIMTech Innovations AB) — RFC 9116
+Contact: mailto:security@upskiller.xyz
+Expires: 2027-10-01T00:00:00.000Z
+Preferred-Languages: en, sv, es
+Canonical: https://upskiller.xyz/.well-known/security.txt
+Canonical: https://luxdaylight.xyz/.well-known/security.txt
+Policy: https://docs.upskiller.xyz/security
